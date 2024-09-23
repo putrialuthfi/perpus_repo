@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.custom-button-primary {
+  background-color: #2A7C76;
+  color: #F9F9F9;
+  border: none;
+}
