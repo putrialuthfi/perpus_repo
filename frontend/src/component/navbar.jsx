@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import logo from '../assets/logo.png';  
+import "/src/App.css"
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,11 +9,11 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-teal-600 p-4">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="navbar">
+      <div className="container py-3 mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <img src="../src/assets/img/logo-1.png" alt="Logo" className="w-12 h-12 mr-4" />
-          <img src="../src/assets/img/logo-2.png" alt="Logo" className="w-12 h-12" />
+          <img src="../src/assets/img/logo-1.png" alt="Logo-1" className="w-12 h-12 mr-4" />
+          <img src="../src/assets/img/logo-2.png" alt="Logo-2" className="w-12 h-12" />
         </div>
         <div className="hidden md:flex space-x-4">
           <a href="#home" className="text-white hover:text-teal-200">Beranda</a>
