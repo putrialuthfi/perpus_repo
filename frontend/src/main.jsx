@@ -16,7 +16,7 @@ import FormPinjamBuku from './component/form-pinjambuku.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* <Beranda /> */}
+    <Beranda />
     {/* <Navbar /> */}
     {/* <Service /> */}
     {/* <App /> */}
@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <RegisPembaca /> */}
     {/* <LoginPembaca /> */}
     {/* <Catalog2 /> */}
-    <FormPinjamBuku />
+    {/* <FormPinjamBuku /> */}
 
   </React.StrictMode>,
 )
