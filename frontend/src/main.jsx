@@ -10,18 +10,21 @@ import Footer from './component/footer.jsx'
 import Service from './component/service-section.jsx'
 import LoginAdmin from './component/login-admin.jsx'
 import LoginPembaca from './component/login-pembaca.jsx'
+import RegisPembaca from './component/regis-pembaca.jsx'
 import Catalog2 from './component/catalog-2.jsx'
+import FormPinjamBuku from './component/form-pinjambuku.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Beranda />
+    {/* <Beranda /> */}
     {/* <Navbar /> */}
     {/* <Service /> */}
     {/* <App /> */}
     {/* <Footer /> */}
-    {/* <LoginAdmin /> */}
+    {/* <RegisPembaca /> */}
     {/* <LoginPembaca /> */}
     {/* <Catalog2 /> */}
+    <FormPinjamBuku />
 
   </React.StrictMode>,
 )
