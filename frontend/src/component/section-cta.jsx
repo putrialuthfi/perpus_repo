@@ -7,20 +7,28 @@ function CTA() {
             <div className="w-full max-w-6xl flex flex-col md:flex-row justify-center items-center gap-10 md:gap-16">
                 {/* Text section */}
                 <div className="flex flex-col justify-center items-center gap-4 text-center md:text-left">
-                    <div className="text-[#333c3f] text-xl md:text-2xl font-bold font-['Source Sans Pro'] leading-relaxed">
+                    <div className="text-[#333c3f] text-lg md:text-xl font-bold font-['Source Sans Pro'] leading-relaxed">
                         Daftar Menjadi Pembaca Sekarang Juga.<br />Buka Buku, Buka Dunia.
                     </div>
                     <div className="flex flex-col gap-3">
-                        {["Meningkatkan wawasan & pengetahuan", "Mengembangkan imajinasi dan kreativitas", "Mengurangi stres", "Meningkatkan kemampuan berbahasa"].map((text, index) => (
-                            <div key={index} className="flex items-center gap-2">
-                                <div className="w-4 h-4 p-0.5 bg-[#f8f8f8] rounded-full flex justify-center items-center">
-                                    <div className="w-3 h-3 bg-[#333c3f] rounded-full"></div>
-                                </div>
-                                <div className="text-[#333c3f] text-lg md:text-xl font-semibold">
-                                    {text}
-                                </div>
-                            </div>
-                        ))}
+                        <ul className="text-left">
+                                <li className="flex flex-items">
+                                    <img src="../src/assets/img/checklist.png" alt="anim" className="w-7 mr-2" />
+                                    <p>Meningkatkan wawasan & pengetahuan</p>
+                                </li>
+                                <li className="flex flex-items">
+                                    <img src="../src/assets/img/checklist.png" alt="anim" className="w-7 mr-2" />
+                                    <p>Mengembangkan imajinasi dan kreativitas</p>
+                                </li>
+                                <li className="flex flex-items">
+                                    <img src="../src/assets/img/checklist.png" alt="anim" className="w-7 mr-2" />
+                                    <p>Mengurangi stres</p>
+                                </li>
+                                <li className="flex flex-items items-center">
+                                    <img src="../src/assets/img/checklist.png" alt="anim" className="w-7 mr-2"/>
+                                    <p>Meningkatkan kemampuan berbahasa</p>
+                                </li>
+                        </ul>
                     </div>
                 </div>
 
