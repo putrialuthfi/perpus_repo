@@ -1,7 +1,8 @@
 import Navbar from "./Navbar"
-import Hero from "./hero-section"
-import Service from "./service-section"
-import CTA from "./cta-section"
+import Hero from "./section-hero"
+import Service from "./section-service"
+import FAQ from "./section-faq"
+import CTA from "./section-cta"
 import Footer from "./footer"
 
 function Beranda() {
@@ -9,6 +10,7 @@ function Beranda() {
         <>
             <Hero />
             <Service />  
+            <FAQ />
             <CTA /> 
             <Footer /> 
         </>

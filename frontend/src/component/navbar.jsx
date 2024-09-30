@@ -19,7 +19,7 @@ function Navbar() {
           <a href="#home" className="text-white hover:text-teal-200">Beranda</a>
           <div className="relative group">
             <button className="text-white hover:text-teal-200">Kategori</button>
-            <div className="absolute hidden group-hover:block bg-white text-black shadow-lg rounded mt-2 p-2 grid grid-cols-3 gap-2">
+            <div className="absolute hidden group-hover:block bg-white text-black shadow-lg rounded mt-2 p-2 grid grid-cols-3 gap-2 text-left">
               <a href="#action1" className="block px-4 py-2 hover:bg-teal-100">Agama</a>
               <a href="#action2" className="block px-4 py-2 hover:bg-teal-100">Biografi</a>
               <a href="#action2" className="block px-4 py-2 hover:bg-teal-100">Fiksi</a>
@@ -32,7 +32,7 @@ function Navbar() {
           <a href="#home" className="text-white hover:text-teal-200">Tentang Kami</a>
           <div className="relative group">
             <button className="text-white hover:text-teal-200">Masuk ke Akun</button>
-            <div className="absolute hidden group-hover:block bg-white text-black shadow-lg rounded mt-2">
+            <div className="absolute hidden group-hover:block bg-white text-black shadow-lg rounded mt-2 text-left">
               <a href="#action3" className="block px-4 py-2 hover:bg-teal-100">Admin</a>
               <a href="#action4" className="block px-4 py-2 hover:bg-teal-100">Pembaca</a>
             </div>
@@ -44,7 +44,7 @@ function Navbar() {
           </svg>
         </button>
       </div>
-      {/* Menu Responsif */}
+      {/* Sidebar Responsif */}
       {isOpen && (
         <div className="md:hidden bg-teal-600 p-4">
           <a href="#home" className="block text-white hover:text-teal-200">Home</a>

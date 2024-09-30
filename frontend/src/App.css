@@ -49,3 +49,12 @@
   position: relative;
 }
 
+.faq-answer {
+  max-height: 0; 
+  overflow: hidden; 
+  transition: max-height 0.3s ease-out; 
+}
+
+.faq-answer.show {
+  max-height: 200px;
+}
