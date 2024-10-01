@@ -58,3 +58,24 @@
 .faq-answer.show {
   max-height: 200px;
 }
+
+/* Styling Color Primary & Secondary */
+.primary-color{
+  color: #2A7C76;
+}
+
+.secondary-color{
+  color: #27A37F;
+}
+
+/* Styling Card Catalog */
+.card-catalog {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-catalog:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}

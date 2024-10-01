@@ -26,8 +26,8 @@ import SectionCatalog from './component/section-catalog.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <SectionCatalog />
-    {/* <Beranda /> */}
+    <Beranda />
+    {/* <SectionCatalog /> */}
     {/* <Navbar /> */}
     {/* <Service /> */}
     {/* <App /> */}
