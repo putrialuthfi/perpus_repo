@@ -36,6 +36,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <LoginPembaca /> */}
     {/* <Catalog2 /> */}
     {/* <FormPinjamBuku /> */}
+    {/* <Navbar/> */}
+    {/* <Hero /> */}
 
   </React.StrictMode>,
 )

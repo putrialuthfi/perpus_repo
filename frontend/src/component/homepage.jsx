@@ -9,6 +9,7 @@ import Footer from "./footer"
 function Beranda() {
     return (
         <>
+            <Navbar />
             <Hero />
             <Service />  
             <SectionCatalog />
