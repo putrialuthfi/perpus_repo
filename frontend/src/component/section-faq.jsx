@@ -40,17 +40,18 @@ const FAQ = () => {
   return (
     <>
         <div className="text-[#333c3f] text-xl md:text-2xl font-bold font-['Source Sans Pro'] my-6">
-                Frequently Asked Question (FAQ)
+                <p className="text-[#27A37F] font-semibold mb-2">Tanya SiPerpus</p>
+                Frequently Asked Question (FAQ) 😊
         </div>
         <div className="flex flex-row gap-3 w-full my-4">
-            {/* <div className="w-1/5  pt-20 flex justify-end">
-                <img 
+            <div className="w-1/5  pt-20 flex justify-end">
+                {/* <img 
                     src="../src/assets/img/illus-faq-1.png" 
                     alt="CTA Image" 
                     className="w-3/5 h-auto"
-                />    
-            </div>              */}
-            <div className="w-3/4 lg:w-3/5 mx-auto text-left">
+                />     */}
+            </div>             
+            <div className="w-full lg:w-3/5 mx-auto text-left">
             {faqData.map((faq, index) => (
                 <div key={index} className="border border-[#2A7C76] my-4 py-3 px-4 rounded-2xl">
                     <div
@@ -72,13 +73,13 @@ const FAQ = () => {
                 </div>
             ))}
             </div>
-            {/* <div className="w-1/5 pt-20">
-                <img 
-                    src="../src/assets/img/illus-faq-2.png" 
-                    alt="CTA Image" 
+            <div className="w-1/5 pt-20">
+                {/* <img 
+                    src="../src/assets/img/illus-faq-3.png" 
+                    alt="Illus FAQ" 
                     className="w-2/5  h-auto"
-                />    
-            </div>   */}
+                />     */}
+            </div>  
         </div>
     </>
   );
