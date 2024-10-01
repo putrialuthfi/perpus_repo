@@ -44,11 +44,11 @@ const FAQ = () => {
                 Frequently Asked Question (FAQ) 😊
         </div>
         <div className="flex flex-row gap-3 w-full my-4">
-            <div className="w-1/5  pt-20 flex justify-end">
+            <div className="w-1/5 grid flex justify-end">
                 {/* <img 
                     src="../src/assets/img/illus-faq-1.png" 
                     alt="CTA Image" 
-                    className="w-3/5 h-auto"
+                    className="w-2/4 h-auto pt-40 flex justify-end"
                 />     */}
             </div>             
             <div className="w-full lg:w-3/5 mx-auto text-left">
