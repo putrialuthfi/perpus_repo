@@ -1,47 +1,38 @@
 function Hero() {
   return (
     <>
-      <div style={{ position: 'relative', height: '100vh', width: '100%' }}>
-        {/* Konten Hero */}
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          textAlign: 'center',
-          backgroundImage: `url('../src/assets/img/img-hero-2.png')`, // Menggunakan backtick untuk template string
-          backgroundSize: 'cover', // Perbaikan di sini
-          backgroundPosition: 'center', // Perbaikan di sini
-          backgroundRepeat: 'no-repeat', // Perbaikan di sini
-        }}>
-          <h2 style={{
-            fontSize: '2.5rem',
-            fontWeight: '700',
-            color: 'white',
-          }}>
-            Si Perpus <br />
-            Temukan Buku, Perluas Wawasan, <br />
-            Kapan Saja, Di Mana Saja
-          </h2>
-          <p style={{
-            marginTop: '20px',
-            fontSize: '1.2rem',
-            color: 'white',
-            maxWidth: '600px',
-          }}>
+    <div className="w-full h-screen flex items-center justify-center" 
+      style={{ 
+        backgroundImage: 'url("../src/assets/img/img-hero-2.png")',
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}>
+      <div className="grid grid-cols-3 absolute top-25 w-2/3 text-left bg-cover bg-center text-white justify-center md:mt-10">
+        {/* Text Hero */}
+        <div className="col-span-2 leading-normal">
+          <div className="font-bold text-2xl mb-2 md:text-4xl md:mb-4">
+            SiPerpus  
+          </div>
+          <div className="text-base md:text-2xl font-bold mb-4">
+            Temukan Buku, Perluas Wawasan, <br />Kapan Saja, Di Mana Saja
+          </div>
+          <div className="text-sm md:text-lg">
             Mencari dan meminjam buku jadi lebih mudah! 
-            Akses ribuan koleksi dengan cepat, periksa ketersediaan buku secara real-time, 
-            dan dapatkan rekomendasi bacaan yang sesuai dengan minatmu. 
+            Akses ribuan koleksi dengan cepat, periksa ketersediaan buku secara real-time, dan dapatkan rekomendasi bacaan yang sesuai dengan minatmu. 
             Nikmati pengalaman membaca yang lebih praktis, kapan pun kamu butuhkan.
-          </p>
+          </div>
+          <button className="mt-6 bg-[#27A37F] px-3 py-2 md:px-4 md:py-2 rounded-lg shadow-lg text-sm md:text-lg">
+            Jelajahi SiPerpus Sekarang!
+          </button>
+        </div>  
+        {/* Image Hero */}
+        <div className="flex flex-col justify-end h-full">
+          <img src="../src/assets/img/anim-hero-1.png" alt="anim-hero" 
+          className="w-full h-auto"/>
         </div>
       </div>
-      {/* <Footer /> */}
+    </div>
     </>
   );
 }
