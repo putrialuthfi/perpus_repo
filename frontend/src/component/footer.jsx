@@ -9,10 +9,16 @@ function Footer() {
           <img src="../src/assets/img/logo-2.png" alt="Logo-2" style={{width:'50px ',height:'50px'}} />
       </div>
         {/* Section: Informasi */}
-        <div className="w-full flex flex-col items-start mb-4 md:mb-0 text-[#F9F9F9] items-center">
-          <h3>DINAS ARSIP DAN PERPUSTAKAAN DAERAH KABUPATEN BEKASI</h3>
-          <h4>J5PF+7Q3, Sukamahi, Kec. Cikarang Pusat, Kabupaten Bekasi, Jawa Barat 17530</h4>
-          <h5>©2024 | Created by @putrialuthfi</h5>
+        <div className="w-full flex flex-col items-start mb-4 md:mb-0 text-[#F9F9F9] items-center justify-center text-center grid grid-rows-3 gap-1">
+          <div className='text-xs md:text-base'>
+            DINAS ARSIP DAN PERPUSTAKAAN DAERAH KABUPATEN BEKASI
+          </div>
+          <div className='text-xs md:text-base'>
+            J5PF+7Q3, Sukamahi, Kec. Cikarang Pusat, Kabupaten Bekasi, Jawa Barat 17530
+          </div>
+          <div className='text-xs'>
+            ©2024 | Created by @putrialuthfi
+          </div>
         </div>
       
     </footer>
