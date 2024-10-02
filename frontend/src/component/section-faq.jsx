@@ -39,11 +39,12 @@ const FAQ = () => {
 
   return (
     <>
-        <div className="text-[#333c3f] text-xl md:text-2xl font-bold font-['Source Sans Pro'] my-6">
+      <div className="my-10">
+        <div className="text-[#333c3f] text-xl md:text-2xl font-bold font-['Source Sans Pro'] pb-4">
                 <p className="text-[#27A37F] font-semibold mb-2">Tanya SiPerpus</p>
                 Frequently Asked Question (FAQ) 😊
         </div>
-        <div className="flex flex-row gap-3 w-full my-4">
+        <div className="flex flex-row gap-3 w-full">
             <div className="w-1/5 grid flex justify-end">
                 {/* <img 
                     src="../src/assets/img/illus-faq-1.png" 
@@ -81,6 +82,7 @@ const FAQ = () => {
                 />     */}
             </div>  
         </div>
+      </div>
     </>
   );
 };

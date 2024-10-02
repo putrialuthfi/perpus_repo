@@ -102,3 +102,18 @@
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+
+/* Styling CSS Grid classes untuk di section katalog*/
+/* .grid-cols-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 6px;
+}
+
+.card-catalog {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  height: 26vh;
+  padding: 20px;
+} */

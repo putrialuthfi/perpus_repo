@@ -27,6 +27,7 @@ import SectionCatalog from './component/section-catalog.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Beranda />
+    {/* <Hero /> */}
     {/* <SectionCatalog /> */}
     {/* <Navbar /> */}
     {/* <Service /> */}
@@ -37,7 +38,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <Catalog2 /> */}
     {/* <FormPinjamBuku /> */}
     {/* <Navbar/> */}
-    {/* <Hero /> */}
 
   </React.StrictMode>,
 )

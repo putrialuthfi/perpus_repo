@@ -8,7 +8,7 @@ function CTA() {
                 {/* Text section */}
                 <div className="flex flex-col justify-center items-center gap-4 text-center md:text-left">
                     <div className="text-[#333c3f] text-lg md:text-xl font-bold font-['Source Sans Pro'] leading-relaxed">
-                        Daftar Menjadi Pembaca Sekarang Juga.<br />Buka Buku, Buka Dunia.
+                        Daftar Menjadi Pembaca Sekarang Juga!<br /> ~Buka Buku, Buka Dunia~
                     </div>
                     <div className="flex flex-col gap-3">
                         <ul className="text-left">
