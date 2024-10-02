@@ -23,10 +23,12 @@ import RegisPembaca from './component/regis-pembaca.jsx'
 import Catalog2 from './component/catalog-2.jsx'
 import FAQ from './component/section-faq.jsx'
 import SectionCatalog from './component/section-catalog.jsx'
+import ProfilPembaca from './component/profil-pembaca.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Beranda />
+    {/* <Beranda /> */}
+    <ProfilPembaca />
     {/* <Hero /> */}
     {/* <SectionCatalog /> */}
     {/* <Navbar /> */}
