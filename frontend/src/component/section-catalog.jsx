@@ -3,21 +3,22 @@ import "/src/App.css"
 function SectionCatalog() {
   return (
     <div className="my-8">
-      <div className="grid grid-cols-2 gap-4 px-20">
-        <div className="text-left">
+      {/* <div className="grid grid-cols-3 gap-4 px-20"> */}
+      <div className="items-center justify-center text-center px-20">
+        {/* <div className="text-left col-span-2"> */}
+        {/* <div className="text-left"> */}
           <p className="text-[#333c3f] text-xl md:text-2xl font-bold font-['Source Sans Pro'] mb-2">
             Mau Baca Apa Hari Ini?
           </p>
-          <p className="text-base w-full font-normal">
+          <p className="text-base w-3/4 font-normal mx-auto">
             Temukan pilihan bacaan yang menarik sesuai minatmu! Dari fiksi, non-fiksi, hingga artikel terbaru—selalu ada sesuatu yang bisa memperkaya harimu. Yuk, jelajahi dan pilih bacaan favoritmu hari ini!
           </p>
-        </div>
-        <div className="text-right">
-          <img src="" alt="search bar" />
-          <button className="mt-10 px-4 py-2 border rounded-xl">
+        {/* </div> */}
+        {/* <div className="flex justify-end font-semibold mt-20 text-[#2A7C76]">
+          <a href="" className="underline">
             Lihat Selengkapnya
-          </button>
-        </div>
+          </a>
+        </div> */}
       </div>
 
     <div className="grid grid-cols-5 gap-6 my-10 px-20">
@@ -385,11 +386,14 @@ function SectionCatalog() {
             </div>
           </div>
         </div>
-    </div>
-    {/* <button className="bg-[#2A7C76] text-white font-semibold py-2 px-4 rounded flex flex-items mx-auto items-center justify-center rounded-xl">
-        <p className="text-left">Lihat Selengkapnya</p>
-        <img src="../src/assets/img/arrow-1.svg" alt="" className="w-6 mt-1 ml-2"/>
-    </button> */}
+      </div>
+      <div>
+        <button className="border py-2 px-4 border-[#2A7C76] rounded-xl text-[#2A7C76] font-semibold transition-colors duration-300 hover:bg-[#2A7C76] hover:text-white">
+          <a href="">
+            Lihat Selengkapnya
+          </a>
+        </button>
+      </div>
     </div>
   );
 }
