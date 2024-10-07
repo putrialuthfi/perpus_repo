@@ -1,7 +1,7 @@
 // import Navbar from "./Navbar";
 // import Footer from "./footer";
 
-function Catalog2() {
+function LamanCatalog2() {
     return (
         <>
         {/* <Navbar /> */}
@@ -45,4 +45,4 @@ function Catalog2() {
     );
 }
 
-export default Catalog2;
+export default LamanCatalog2;
