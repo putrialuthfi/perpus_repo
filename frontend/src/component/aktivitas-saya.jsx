@@ -1,4 +1,5 @@
 import "/src/App.css";
+import { Breadcrumbs } from '@mui/material';
 
 function AktivitasSaya() {
   return (
@@ -51,8 +52,14 @@ function AktivitasSaya() {
               <div className="font-bold text-2xl mb-2">Aktivitas Saya</div>
               <div className="text-sm">Pada laman ini berisi riwayat aktivitas peminjaman buku yang pernah dilakukan</div>
             </div>
+            <Breadcrumbs className="breadcrumbs-font">
+                <a href="aktivitas-saya.jsx" className="">
+                  Sedang Dibaca
+                </a>
+                <a href="aktivitas-saya-2.jsx" className="opacity-60">Selesai Dibaca</a>
+            </Breadcrumbs>
             {/* section tabel */}
-            <div>
+            <div className="mt-2">
             <table className="border w-full">
                 <thead className="text-white bg-primary">
                     <td>Kode Buku</td>
