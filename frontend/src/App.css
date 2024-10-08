@@ -69,16 +69,88 @@
 }
 
 /* Styling Card Catalog */
-.card-catalog {
+.card-catalog-1 {
+  border-radius: 10px;
+  height: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card-catalog:hover {
+.card-catalog-1:hover {
+  color: #27A37F;
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
+
+.card-article {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-article:hover {
+  color: #27A37F;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.mini-card-article{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  text-align: justify;
+}
+
+.mini-card-article:hover{
+  background-color: rgba(39, 163, 127, 0.2);
+}
+
+.img-card-catalog,
+.img-card-article{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-hero-article{
+  background-image: url(../src/assets/img/buku-1.jpg);
+  background-size: cover;
+  height: 65vh;
+}
+
+.button-detail{
+  background-color: #F9F9F9;
+  color: #333C3F;
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2A7C76;
+}
+
+.button-pinjam{
+  background-color: #27A37F;
+  color: #F2F2F2;
+  font-weight: 600;
+  padding: 0.5rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-baca{
+  width: 100%;
+  background-color: #27A37F;
+  color: #F2F2F2;
+  font-weight: 600;
+  padding: 0.7rem 0.5rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /* Styling Sidebar */
 .sidebar-enter {
@@ -103,20 +175,6 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-
-/* Styling CSS Grid classes untuk di section katalog*/
-/* .grid-cols-5 {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-}
-
-.card-catalog {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  height: 26vh;
-  padding: 20px;
-} */
 
 /* DESIGN SYSTEM */
 .bg-primary{
@@ -150,4 +208,8 @@
 .custom-input:focus{
   outline: none;
   box-shadow: 0 0 0 2px #2A7C76;
+}
+
+.breadcrumbs-font a{
+  color: black;
 }
