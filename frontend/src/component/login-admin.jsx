@@ -11,7 +11,7 @@ function LoginAdmin() {
                             <h4 className="text-sm mt-2">Silakan mendaftar akun untuk mendapatkan layanan menarik yang hanya bisa diakses oleh pengguna</h4>
                         </div>
                         <div className="mb-6">
-                            <input className="shadow appearance-none border rounded w-full py-2 px-3 mb-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="ID Admin" />
+                            <input className="shadow appearance-none border rounded w-full py-2 px-3 mb-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="email" type="text" placeholder="Email" />
                             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Kata Sandi" />
                         </div>
                         <div className="">
