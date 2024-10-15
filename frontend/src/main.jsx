@@ -22,7 +22,7 @@ import LamanCatalog1 from './component/laman-catalog-1.jsx';
 import FormPinjamBuku from './component/form-pinjambuku.jsx';
 import Article from './component/article.jsx';
 import LoginAdmin from './component/login-admin.jsx';
-import { CarouselWithContent } from './component/carousel.jsx';
+// import { CarouselWithContent } from './component/carousel.jsx';
 import { Carousel, Button } from "@material-tailwind/react";
 import { ThemeProvider } from "@material-tailwind/react";
 
