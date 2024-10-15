@@ -76,9 +76,11 @@ function Article() {
       </div>
  {/*ROW 2  */}
       <div className="">
-        <div className="flex items-center grid grid-cols-3 my-4">
-            <div className="mr-10 text-left font-bold">TOP TRENDING HARI INI</div>
-            <div className="col-span-2 w-full h-1 bg-gray-200"></div>
+        <div className="flex justify-end items-center text-right">
+            <div className="text-left w-1/3 text-lg font-bold text-[#2A7C76]">
+              TOP TRENDING HARI INI
+            </div>
+          <div className="w-full h-1 bg-gray-200"></div>
         </div>
       </div>
 {/* ROW 3 */}
@@ -270,12 +272,12 @@ function Article() {
 
 {/* Update Terbaru */}
  {/*ROW 4  */}
-      <div className="">
-        <div className="flex items-center grid grid-cols-3 my-4">
-            <div className="mr-10 text-left font-bold">UPDATE TERBARU</div>
-            <div className="col-span-2 w-full h-1 bg-gray-200"></div>
+        <div className="flex justify-end items-center text-right">
+            <div className="text-left text-lg font-bold w-1/5 text-[#2A7C76]">
+              UPDATE TERBARU
+            </div>
+          <div className="w-full h-1 bg-gray-200"></div>
         </div>
-      </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
 {/* Artikel-1 */}
         <div className="card-article">
