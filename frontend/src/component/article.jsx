@@ -4,26 +4,31 @@ import { Link } from 'react-router-dom';
 
 function Article() {
   return (
-    <div className="my-10 mx-20 space-y-6">
-      <div className="text-center px-4 sm:px-8 md:px-16 lg:px-20">
-        <p className="text-[#333c3f] text-xl md:text-2xl font-bold font-['Source Sans Pro']">
-          Bacaan Untukmu
-        </p>
+    <div className="my-10 mx-5 space-y-6 sm:mx-10 md:mx-20 space-y-6">
+      
+{/* TITLE */}
+      <div className="">
+        <div className="text-center px-4 sm:px-8 md:px-16 lg:px-20 mb-4">
+          <p className="text-[#333c3f] text-xl md:text-2xl font-bold font-['Source Sans Pro']">
+            Bacaan Untukmu
+          </p>
+        </div>
+        <marquee behavior="" direction="" className="bg-[#2A7C76] text-white">
+            AYO! HADIRI PEMBUKAAN EVENT GEBYAR PARIWISATA DAN EKONOMI KREATIF KABUPATEN BEKASI
+        </marquee>
       </div>
-      <marquee behavior="" direction="" className="bg-[#2A7C76] text-white">
-          AYO! HADIRI PEMBUKAAN EVENT GEBYAR PARIWISATA DAN EKONOMI KREATIF KABUPATEN BEKASI
-      </marquee>
 
-{/* ROW 1 */}
-        <div className="grid-cols-3 gap-10 flex">
-          <div className="w-2/3 banner-hero-article"></div>
-{/* artikel row kanan */}
-          <div className="w-1/3 grid grid-rows-4">
+{/* Hero Section */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-3">
+{/* Artikel Kanan */}
+          <div className="banner-hero-article col-span-2 mb-4"></div>
+{/* Artikel Kiri */}
+          <div className=" grid grid-rows-4 gap-2">
 {/* artikel 1 */}
           <Link className="pointer">
             <div className="mini-card-article py-2">
-              <div className="flex justify-center items-center">
-                <img src="../src/assets/img/buku-1.png" alt="" className="w-20 h-auto "/>
+              <div className="flex items-center lg:justify-center">
+                <img src="https://images.unsplash.com/photo-1610797169128-5acf0b050aad?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmVzdGl2YWx8ZW58MHwxfDB8fHww" alt="" className="img-mini-card-article"/>
                 <div className="px-6 text-sm">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   <p className="text-xs font-bold my-2">Lorem ipsum dolor sit amet.</p>
@@ -34,7 +39,7 @@ function Article() {
 {/* artikel 2 */}
           <Link className="pointer">
             <div className="mini-card-article py-2">
-              <div className="flex justify-center items-center">
+              <div className="flex items-center items-center lg:justify-center">
                 <img src="../src/assets/img/buku-1.png" alt="" className="w-20 h-auto "/>
                 <div className="px-6 text-sm">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -46,7 +51,7 @@ function Article() {
 {/* artikel 3 */}
           <Link className="pointer">
             <div className="mini-card-article py-2">
-              <div className="flex justify-center items-center">
+              <div className="flex items-center items-center lg:justify-center">
                 <img src="../src/assets/img/buku-1.png" alt="" className="w-20 h-auto "/>
                 <div className="px-6 text-sm">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -58,7 +63,7 @@ function Article() {
 {/* artikel 4 */}
           <Link className="pointer">
             <div className="mini-card-article py-2">
-              <div className="flex justify-center items-center">
+              <div className="flex items-center items-center lg:justify-center">
                 <img src="../src/assets/img/buku-1.png" alt="" className="w-20 h-auto "/>
                 <div className="px-6 text-sm">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -71,24 +76,22 @@ function Article() {
       </div>
  {/*ROW 2  */}
       <div className="">
-        <div className="flex justify-end items-center">
-          <div className="text-base font-semibold text-left w-auto mr-6">
-            TOP TRENDING HARI INI
-          </div>
-          <div className="w-4/5 h-1 bg-gray-200"></div>
+        <div className="flex items-center grid grid-cols-3 my-4 sm:mx-10">
+            <div className="mr-10 text-left font-bold">TOP TRENDING HARI INI</div>
+            <div className="col-span-2 w-full h-1 bg-gray-200"></div>
         </div>
       </div>
-
 {/* ROW 3 */}
-      <div className="">
+      <div className="space-y-10">
 {/* Artikel Baris Atas */}
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid lg:grid-cols-3 sm:grid-cols-3 gap-4">
 {/* Artikel-1 */}
         <div className="card-article">
           <Link to="/">
               <div className="h-40">
                 <img
-                  src="../src/assets/img/buku-1.png"
+                  src="
+                  https://plus.unsplash.com/premium_photo-1673639729701-c903b5d2be4b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGFtZXJpa2F8ZW58MHx8MHx8fDA%3D"
                   alt="card-image"
                   className="img-card-article"
                 />
@@ -108,7 +111,7 @@ function Article() {
           <Link to="/">
               <div className="h-40">
                 <img
-                  src="../src/assets/img/buku-1.png"
+                  src="https://plus.unsplash.com/premium_photo-1661779586447-fd6f64c795b2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fHJlYWRpbmclMjBib29rfGVufDB8fDB8fHww"
                   alt="card-image"
                   className="img-card-article"
                 />
@@ -118,7 +121,7 @@ function Article() {
                     07 Okt 2024 | 09:24
                 </div>
                 <div className="text-base font-bold text-align-justify">
-                    Amerika Serikat Memperingati Hari Baca  
+                RIP Buku, Kenapa Orang Tidak Lagi Baca Buku?  
                 </div>
               </div>
           </Link>
@@ -128,7 +131,7 @@ function Article() {
           <Link to="/">
               <div className="h-40">
                 <img
-                  src="../src/assets/img/buku-1.png"
+                  src="https://images.unsplash.com/photo-1708831736377-9387cd8dec1c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aGFsdGV8ZW58MHx8MHx8fDA%3D"
                   alt="card-image"
                   className="img-card-article"
                 />
@@ -138,7 +141,7 @@ function Article() {
                     07 Okt 2024 | 09:24
                 </div>
                 <div className="text-base font-bold text-align-justify">
-                    Amerika Serikat Memperingati Hari Baca  
+                Pinjam Buku di Halte, Sebuah Ulasan  
                 </div>
               </div>
           </Link>
@@ -148,7 +151,7 @@ function Article() {
           <Link to="/">
               <div className="h-40">
                 <img
-                  src="../src/assets/img/buku-1.png"
+                  src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGNpbmVtYXxlbnwwfHwwfHx8MA%3D%3D"
                   alt="card-image"
                   className="img-card-article"
                 />
@@ -158,16 +161,122 @@ function Article() {
                     07 Okt 2024 | 09:24
                 </div>
                 <div className="text-base font-bold text-align-justify">
-                    Amerika Serikat Memperingati Hari Baca  
+                Ternyata Kita Lebih Suka Menonton, Apa Alasannya? 
+                </div>
+              </div>
+          </Link>
+        </div>
+{/* Artikel-5 */}
+        <div className="card-article">
+          <Link to="/">
+              <div className="h-40">
+                <img
+                  src="https://images.unsplash.com/photo-1616628188467-8fb29f49bbe8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d3JpdGV8ZW58MHx8MHx8fDA%3D"
+                  alt="card-image"
+                  className="img-card-article"
+                />
+              </div>
+              <div className="py-4 px-3 text-left">
+                <div className="text-sm">
+                    07 Okt 2024 | 09:24
+                </div>
+                <div className="text-base font-bold text-align-justify">
+                Tips Ampuh Meningkatkan Keterampilan Menulis  
+                </div>
+              </div>
+          </Link>
+        </div>
+{/* Artikel-6 */}
+<div className="card-article">
+          <Link to="/">
+              <div className="h-40">
+                <img
+                  src="https://images.unsplash.com/photo-1582079767878-082f4300d386?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHJlYWRpbmd8ZW58MHx8MHx8fDA%3D"
+                  alt="card-image"
+                  className="img-card-article"
+                />
+              </div>
+              <div className="py-4 px-3 text-left">
+                <div className="text-sm">
+                    07 Okt 2024 | 09:24
+                </div>
+                <div className="text-base font-bold text-align-justify">
+                5 Manfaat Membaca Buku Nonfiksi 
+                </div>
+              </div>
+          </Link>
+        </div>
+{/* Artikel-7 */}
+<div className="card-article">
+          <Link to="/">
+              <div className="h-40">
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1672292536199-7a4cf2b78318?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWVudGFsJTIwaGVhbHRofGVufDB8fDB8fHww"
+                  alt="card-image"
+                  className="img-card-article"
+                />
+              </div>
+              <div className="py-4 px-3 text-left">
+                <div className="text-sm">
+                    07 Okt 2024 | 09:24
+                </div>
+                <div className="text-base font-bold text-align-justify">
+                Manfaat Membaca Buku dan Kesehatan Mental
+                </div>
+              </div>
+          </Link>
+        </div>
+{/* Artikel-6 */}
+<div className="card-article">
+          <Link to="/">
+              <div className="h-40">
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1683535508596-9216de2ad64b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YmlibGlvZ3JhcGh5fGVufDB8fDB8fHww"
+                  alt="card-image"
+                  className="img-card-article"
+                />
+              </div>
+              <div className="py-4 px-3 text-left">
+                <div className="text-sm">
+                    07 Okt 2024 | 09:24
+                </div>
+                <div className="text-base font-bold text-align-justify">
+                9 Julukan Bagi Penggemar Buku, Kamu yang Mana?
+                </div>
+              </div>
+          </Link>
+        </div>
+{/* Artikel-7 */}
+<div className="card-article">
+          <Link to="/">
+              <div className="h-40">
+                <img
+                  src="https://images.unsplash.com/photo-1517971129774-8a2b38fa128e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Ym9vayUyMHdyaXRlcnxlbnwwfHwwfHx8MA%3D%3D"
+                  alt="card-image"
+                  className="img-card-article"
+                />
+              </div>
+              <div className="py-4 px-3 text-left">
+                <div className="text-sm">
+                    07 Okt 2024 | 09:24
+                </div>
+                <div className="text-base font-bold text-align-justify">
+                Langkah-Langkah Menjadi Penulis Buku
                 </div>
               </div>
           </Link>
         </div>
         </div>   
 
-
-{/* Artikel Baris Bawah */}
-        <div className="grid grid-cols-4 gap-4 my-10">
+{/* Update Terbaru */}
+ {/*ROW 4  */}
+      <div className="">
+        <div className="flex items-center grid grid-cols-3 my-4">
+            <div className="mr-10 text-left font-bold">UPDATE TERBARU</div>
+            <div className="col-span-2 w-full h-1 bg-gray-200"></div>
+        </div>
+      </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
 {/* Artikel-5 */}
         <div className="card-article">
           <Link to="/">
@@ -183,7 +292,7 @@ function Article() {
                     07 Okt 2024 | 09:24
                 </div>
                 <div className="text-base font-bold text-align-justify">
-                    Amerika Serikat Memperingati Hari Baca  
+                    1Amerika Serikat Memperingati Hari Baca  
                 </div>
               </div>
           </Link>
@@ -250,7 +359,8 @@ function Article() {
         </div>
         </div>   
         <Link className="w-full">
-          <div className="flex mx-auto button-primary w-1/3 justify-center items-center">
+          <div className="flex mx-auto my-10 button-primary w-1/3 
+          sm:w-2/3 justify-center items-center">
             Baca artikel lainnya 
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#F2F2F2"><path d="M383-480 200-664l56-56 240 240-240 240-56-56 183-184Zm264 0L464-664l56-56 240 240-240 240-56-56 183-184Z"/></svg>
           </div>

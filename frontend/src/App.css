@@ -99,6 +99,13 @@
   text-align: justify;
 }
 
+.img-mini-card-article{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 1px solid saddlebrown;
+}
+
 .mini-card-article:hover{
   background-color: rgba(39, 163, 127, 0.2);
 }
@@ -111,9 +118,9 @@
 }
 
 .banner-hero-article{
-  background-image: url(../src/assets/img/buku-1.jpg);
+  background-image: url(https://images.unsplash.com/photo-1697382608873-acefe3c756fd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGJvb2slMjBuZXdzfGVufDB8fDB8fHww);
   background-size: cover;
-  height: 65vh;
+  height: 70vh;
 }
 
 .button-detail{
