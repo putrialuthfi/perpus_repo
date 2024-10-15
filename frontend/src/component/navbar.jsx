@@ -74,7 +74,7 @@ function Navbar() {
           <div className="relative" ref={dropdownRef}> {/* Add ref to the dropdown */}
             <button onClick={toggleDropdown} className="text-white hover:text-teal-200">Kategori</button>
             {isDropdownOpen && (
-              <div className="absolute bg-white text-black shadow-lg rounded mt-2 p-2 gap-2 text-left">
+              <div className="absolute bg-white text-black shadow-lg rounded mt-2 gap-2 text-left">
                 <a href="#action1" className="block px-4 py-2 hover:bg-teal-100">Agama</a>
                 <a href="#action2" className="block px-4 py-2 hover:bg-teal-100">Biografi</a>
                 <a href="#action3" className="block px-4 py-2 hover:bg-teal-100">Fiksi</a>
