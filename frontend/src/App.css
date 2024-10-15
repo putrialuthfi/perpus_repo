@@ -99,13 +99,6 @@
   text-align: justify;
 }
 
-.img-mini-card-article{
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border: 1px solid saddlebrown;
-}
-
 .mini-card-article:hover{
   background-color: rgba(39, 163, 127, 0.2);
 }
@@ -198,6 +191,10 @@
   border-radius: 10px;
   padding: 10px 18px;
   font-weight: 600;
+}
+
+.button-primary:hover{
+  filter: drop-shadow(0 0 .5em #27a3806c);
 }
 
 .button-secondary{

@@ -28,10 +28,10 @@ function Article() {
           <Link className="pointer">
             <div className="mini-card-article py-2">
               <div className="flex items-center lg:justify-center">
-                <img src="https://images.unsplash.com/photo-1610797169128-5acf0b050aad?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmVzdGl2YWx8ZW58MHwxfDB8fHww" alt="" className="img-mini-card-article"/>
+                <img src="../src/assets/img/img-hero-art-1.png" alt="" className="w-20 h-auto"/>
                 <div className="px-6 text-sm">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  <p className="text-xs font-bold my-2">Lorem ipsum dolor sit amet.</p>
+                  Pekan Kreasi Daerah Hadir Lagi! Catat Tanggalnya!
+                  <p className="text-xs font-bold my-2">08 Sep 2024 | Sendy Sandhika</p>
                 </div>
               </div>
             </div>
@@ -39,11 +39,11 @@ function Article() {
 {/* artikel 2 */}
           <Link className="pointer">
             <div className="mini-card-article py-2">
-              <div className="flex items-center items-center lg:justify-center">
-                <img src="../src/assets/img/buku-1.png" alt="" className="w-20 h-auto "/>
+              <div className="flex items-center lg:justify-center">
+                <img src="../src/assets/img/img-hero-art-2.png" alt="" className="w-20 h-auto"/>
                 <div className="px-6 text-sm">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  <p className="text-xs font-bold my-2">Lorem ipsum dolor sit amet.</p>
+                  Pasar Buah Promo! Sudah Berkunjung?
+                  <p className="text-xs font-bold my-2">09 Sep 2024 | Ani Natalia</p>
                 </div>
               </div>
             </div>
@@ -52,22 +52,22 @@ function Article() {
           <Link className="pointer">
             <div className="mini-card-article py-2">
               <div className="flex items-center items-center lg:justify-center">
-                <img src="../src/assets/img/buku-1.png" alt="" className="w-20 h-auto "/>
+                <img src="../src/assets/img/img-hero-art-3.png" alt="" className="w-20 h-auto "/>
                 <div className="px-6 text-sm">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  <p className="text-xs font-bold my-2">Lorem ipsum dolor sit amet.</p>
+                  5 Taman Asri Penyejuk Mata dan Ramah Anak
+                  <p className="text-xs font-bold my-2">11 Sep 2024 | Gio Raharjo</p>
                 </div>
               </div>
             </div>
           </Link>
 {/* artikel 4 */}
-          <Link className="pointer">
+<Link className="pointer">
             <div className="mini-card-article py-2">
               <div className="flex items-center items-center lg:justify-center">
-                <img src="../src/assets/img/buku-1.png" alt="" className="w-20 h-auto "/>
+                <img src="../src/assets/img/img-hero-art-4.png" alt="" className="w-20 h-auto "/>
                 <div className="px-6 text-sm">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  <p className="text-xs font-bold my-2">Lorem ipsum dolor sit amet.</p>
+                  Cuci Gudang Penerbit Republika, Semua Buku Diskon!
+                  <p className="text-xs font-bold my-2">14 Sep 2024 | Jauhari Amdiyanto</p>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ function Article() {
       </div>
  {/*ROW 2  */}
       <div className="">
-        <div className="flex items-center grid grid-cols-3 my-4 sm:mx-10">
+        <div className="flex items-center grid grid-cols-3 my-4">
             <div className="mr-10 text-left font-bold">TOP TRENDING HARI INI</div>
             <div className="col-span-2 w-full h-1 bg-gray-200"></div>
         </div>
@@ -277,13 +277,12 @@ function Article() {
         </div>
       </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-{/* Artikel-5 */}
+{/* Artikel-1 */}
         <div className="card-article">
           <Link to="/">
               <div className="h-40">
                 <img
-                  src="../src/assets/img/buku-1.png"
-                  alt="card-image"
+                  src="https://images.pexels.com/photos/1516983/pexels-photo-1516983.jpeg?auto=compress&cs=tinysrgb&w=600"
                   className="img-card-article"
                 />
               </div>
@@ -292,7 +291,7 @@ function Article() {
                     07 Okt 2024 | 09:24
                 </div>
                 <div className="text-base font-bold text-align-justify">
-                    1Amerika Serikat Memperingati Hari Baca  
+                    Kopi dan Buku: Mengapa Begitu Lekat?
                 </div>
               </div>
           </Link>
@@ -302,7 +301,7 @@ function Article() {
           <Link to="/">
               <div className="h-40">
                 <img
-                  src="../src/assets/img/buku-1.png"
+                  src="https://images.pexels.com/photos/1741231/pexels-photo-1741231.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt="card-image"
                   className="img-card-article"
                 />
@@ -312,7 +311,7 @@ function Article() {
                     07 Okt 2024 | 09:24
                 </div>
                 <div className="text-base font-bold text-align-justify">
-                    Amerika Serikat Memperingati Hari Baca  
+                    Ajak Anak Membaca Sejak Dini, Adakah Manfaatnya?
                 </div>
               </div>
           </Link>
@@ -322,7 +321,7 @@ function Article() {
           <Link to="/">
               <div className="h-40">
                 <img
-                  src="../src/assets/img/buku-1.png"
+                  src="https://images.pexels.com/photos/1059380/pexels-photo-1059380.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt="card-image"
                   className="img-card-article"
                 />
@@ -332,7 +331,7 @@ function Article() {
                     07 Okt 2024 | 09:24
                 </div>
                 <div className="text-base font-bold text-align-justify">
-                    Amerika Serikat Memperingati Hari Baca  
+                    Mengapa Nulis Jurnal di Buku Fisik Terasa Lebih Asik?  
                 </div>
               </div>
           </Link>
@@ -342,7 +341,7 @@ function Article() {
           <Link to="/">
               <div className="h-40">
                 <img
-                  src="../src/assets/img/buku-1.png"
+                  src="https://images.pexels.com/photos/28894564/pexels-photo-28894564/free-photo-of-suasana-membaca-yang-nyaman-dengan-buku-terbuka-dan-lilin.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt="card-image"
                   className="img-card-article"
                 />
@@ -352,15 +351,15 @@ function Article() {
                     07 Okt 2024 | 09:24
                 </div>
                 <div className="text-base font-bold text-align-justify">
-                    Amerika Serikat Memperingati Hari Baca  
+                    Ide Pembatas Buku Ala Kreasi Sendiri  
                 </div>
               </div>
           </Link>
         </div>
         </div>   
         <Link className="w-full">
-          <div className="flex mx-auto my-10 button-primary w-1/3 
-          sm:w-2/3 justify-center items-center">
+          <div className="flex mx-auto my-10 button-primary
+          lg:w-1/3 sm:2/3 justify-center items-center">
             Baca artikel lainnya 
             <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#F2F2F2"><path d="M383-480 200-664l56-56 240 240-240 240-56-56 183-184Zm264 0L464-664l56-56 240 240-240 240-56-56 183-184Z"/></svg>
           </div>
