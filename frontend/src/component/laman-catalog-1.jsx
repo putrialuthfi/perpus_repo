@@ -16,15 +16,14 @@ function LamanCatalog1() {
           Temukan pilihan bacaan yang menarik sesuai minatmu! Dari fiksi, non-fiksi, hingga artikel terbaru—selalu ada sesuatu yang bisa memperkaya harimu. Yuk, jelajahi dan pilih bacaan favoritmu hari ini!
         </p>
       </div>
-
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 my-10 px-4 sm:px-8 md:px-16 lg:px-20">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-7 my-10 px-4 sm:px-8 md:px-16 lg:px-20">
 {/* Buku-1 */}
-        <div className="card-catalog border rounded-2xl h-auto">
+        <div className="card-catalog-1 ">
           <div className="h-40">
             <img
               src="../src/assets/img/buku-1.png"
               alt="card-image"
-              className="object-cover w-full h-full rounded-t-2xl"
+              className="img-card-catalog"
             />
           </div>
           <div className="py-4 px-3">
@@ -349,10 +348,10 @@ function LamanCatalog1() {
 
  {/*Button  */}
       </div>
-      <div className="mx-20">
+      <div className="mx-5 sm:mx-20">
         <div className="flex justify-end items-center text-right">
           <div className="w-full h-1 bg-gray-200"></div>
-          <button className="w-1/3 button-primary">
+          <button className="w-2/3 sm:w-1/3 button-primary">
             <a href="">
               Lihat Selengkapnya
             </a>
