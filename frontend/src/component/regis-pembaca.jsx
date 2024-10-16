@@ -20,7 +20,7 @@ function RegisAdmin() {
                             <button className="w-full bg-[#2A7C76] text-white font-bold py-2 px-3 mb-3 rounded" type="button">
                                 Daftar
                             </button>
-                            <p className="text-sm">Sudah punya akun? <a href="" className="underline">Masuk ke akun disini</a></p>
+                            <p className="text-sm">Sudah punya akun? <a href="/LoginPembaca" className="underline">Masuk ke akun disini</a></p>
                         </div>
                     </form>
                 </div>
