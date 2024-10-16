@@ -41,7 +41,7 @@ function FormPinjamBuku() {
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="w-full max-w-3xl">
+      <div className="w-full max-w-3xl mx-4 sm:mx-0">
         <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           {/* Form Row: Kode Buku */}
           <div className="mb-4 flex items-center">

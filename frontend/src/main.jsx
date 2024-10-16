@@ -15,15 +15,17 @@ import './index.css'
 import Navbar from './component/Navbar.jsx'
 import Hero from './component/section-hero.jsx'
 import Beranda from './component/homepage.jsx'
-import AboutUs from './component/aboutus.jsx'
+import TentangKami from './component/tentang-kami.jsx'
 import Footer from './component/footer.jsx'
-import LamanCatalog2 from './component/laman-catalog-2.jsx'
 import LamanCatalog1 from './component/laman-catalog-1.jsx';
+import LamanCatalog2 from './component/laman-catalog-2.jsx'
 import FormPinjamBuku from './component/form-pinjambuku.jsx';
 import Article from './component/article.jsx';
 import LoginAdmin from './component/login-admin.jsx';
-// import { CarouselWithContent } from './component/carousel.jsx';
-import { Carousel, Button } from "@material-tailwind/react";
+import LoginPembaca from './component/login-pembaca.jsx';
+import RegisAdmin from './component/regis-admin.jsx';
+import RegisPembaca from './component/regis-pembaca.jsx';
+import CarouselTes from './component/carouseltes.jsx';
 import { ThemeProvider } from "@material-tailwind/react";
 
 const Home = () => {
@@ -31,11 +33,15 @@ const Home = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Beranda />} />
+        <Route path="/beranda" element={<Beranda />} />
         <Route path="/loginadmin" element={<LoginAdmin />} />
-        {/* <Route path="/LamanCatalog2" element={<LamanCatalog2 />} /> */}
-        {/* <Route path="/FormPinjamBuku" element={<FormPinjamBuku />} /> */}
-        {/* <Route path="/" element={<Beranda />} />
-        <Route path="/aboutus" element={<AboutUs />} /> */}
+        <Route path="/loginpembaca" element={<LoginPembaca />} />
+        <Route path="/regisadmin" element={<RegisAdmin />} />
+        <Route path="/regispembaca" element={<RegisPembaca />} />
+        <Route path="/LamanCatalog1" element={<LamanCatalog1 />} />
+        <Route path="/LamanCatalog2" element={<LamanCatalog2 />} />
+        <Route path="/FormPinjamBuku" element={<FormPinjamBuku />} />
+        <Route path="/tentangkami" element={<TentangKami />} />
         <Route path="/Article" element={<Article />} />
       </Routes>
     </Router>

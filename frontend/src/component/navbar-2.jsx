@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "/src/App.css";
+import Article from './article';
 
-function Navbar() {
+function Navbar2() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Untuk dropdown di desktop (Kategori)
@@ -61,7 +62,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`navbar ${scrolling ? 'bg-green' : 'bg-transparent'} fixed top-0 left-0 w-full z-10 transition-all duration-300`}
+      className={`navbar ${scrolling ? 'bg-green' : 'bg-[#2A7C76]'} fixed top-0 left-0 w-full z-10 transition-all duration-300`}
       style={scrolling ? { backgroundColor: 'rgba(42, 124, 118, 0.5)' } : {}}
     >
       <div className="container py-3 mx-auto flex justify-between items-center px-4 md:px-0">
@@ -84,7 +85,6 @@ function Navbar() {
               </div>
             )}
           </div>
-          {/* <Link className="text-white hover:text-teal-200">Artikel</Link> */}
           <a href="/article" className="text-white hover:text-teal-200">Artikel</a>
           <a href="/tentangkami" className="text-white hover:text-teal-200">Tentang Kami</a>
           <div className="relative" ref={accountDropdownRef}> {/* Add ref to the account dropdown */}
@@ -157,4 +157,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Navbar2;
