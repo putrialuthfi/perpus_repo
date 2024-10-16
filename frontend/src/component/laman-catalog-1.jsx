@@ -4,10 +4,14 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import LamanCatalog2 from "./laman-catalog-2";
 import FormPinjamBuku from "./form-pinjambuku";
+import Navbar2 from "./navbar-2";
+import Footer from "./footer";
 
 function LamanCatalog1() {
   return (
-    <div className="my-10">
+    <>
+    <Navbar2 />
+    <div className="mt-24 mb-10">
       <div className="text-center px-4 sm:px-8 md:px-16 lg:px-20">
         <p className="text-[#333c3f] text-xl md:text-2xl font-bold font-['Source Sans Pro'] mb-2">
           Mau Baca Apa Hari Ini?
@@ -352,13 +356,15 @@ function LamanCatalog1() {
         <div className="flex justify-end items-center text-right">
           <div className="w-full h-1 bg-gray-200"></div>
           <button className="w-2/3 sm:w-1/3 button-primary">
-            <a href="">
+            <a href="/LamanCatalog1">
               Lihat Selengkapnya
             </a>
           </button>
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }
 
