@@ -25,7 +25,6 @@ import LoginAdmin from './component/login-admin.jsx';
 import LoginPembaca from './component/login-pembaca.jsx';
 import RegisAdmin from './component/regis-admin.jsx';
 import RegisPembaca from './component/regis-pembaca.jsx';
-import CarouselTes from './component/carouseltes.jsx';
 import { ThemeProvider } from "@material-tailwind/react";
 
 const Home = () => {

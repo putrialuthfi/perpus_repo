@@ -9,7 +9,7 @@ function Article() {
   return (
     <>
     <Navbar2 />
-    <div className="mt-24 mb-10 mx-5 space-y-6 sm:mx-10 md:mx-20 space-y-6">
+    <div className="mt-24 mb-10 mx-5 space-y-6 sm:mx-10 md:mx-20">
       
 {/* TITLE */}
       <div className="">
@@ -56,7 +56,7 @@ function Article() {
 {/* artikel 3 */}
           <Link className="pointer">
             <div className="mini-card-article py-2">
-              <div className="flex items-center items-center lg:justify-center">
+              <div className="flex items-center lg:justify-center">
                 <img src="../src/assets/img/img-hero-art-3.png" alt="" className="w-20 h-auto "/>
                 <div className="px-6 text-sm">
                   5 Taman Asri Penyejuk Mata dan Ramah Anak
@@ -68,7 +68,7 @@ function Article() {
 {/* artikel 4 */}
 <Link className="pointer">
             <div className="mini-card-article py-2">
-              <div className="flex items-center items-center lg:justify-center">
+              <div className="flex items-center lg:justify-center">
                 <img src="../src/assets/img/img-hero-art-4.png" alt="" className="w-20 h-auto "/>
                 <div className="px-6 text-sm">
                   Cuci Gudang Penerbit Republika, Semua Buku Diskon!
