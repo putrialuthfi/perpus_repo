@@ -1,9 +1,14 @@
 import "/src/App.css"
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Navbar2 from "./navbar-2";
+import Footer from "./footer";
+// import { Navbar } from "@material-tailwind/react";
 
 function Article() {
   return (
+    <>
+    <Navbar2 />
     <div className="my-10 mx-5 space-y-6 sm:mx-10 md:mx-20 space-y-6">
       
 {/* TITLE */}
@@ -368,6 +373,8 @@ function Article() {
         </Link>
       </div>
     </div>
+    <Footer />
+    </>
   );
 }
 
