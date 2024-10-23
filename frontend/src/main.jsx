@@ -25,7 +25,14 @@ import LoginAdmin from './component/login-admin.jsx';
 import LoginPembaca from './component/login-pembaca.jsx';
 import RegisAdmin from './component/regis-admin.jsx';
 import RegisPembaca from './component/regis-pembaca.jsx';
+import ProfilAdmin from './component/profil-admin.jsx';
+import ProfilPembaca from './component/profil-pembaca.jsx';
 import { ThemeProvider } from "@material-tailwind/react";
+import DataPeminjamBuku from './component/data-peminjam-buku.jsx';
+import UploadDataBuku from './component/upload-data-buku.jsx';
+import RiwayatPeminjaman from './component/riwayat-peminjaman.jsx';
+import AktivitasSaya from './component/aktivitas-saya.jsx';
+import AktivitasSaya2 from './component/aktivitas-saya-2.jsx';
 
 const Home = () => {
   return (
@@ -37,6 +44,12 @@ const Home = () => {
         <Route path="/loginpembaca" element={<LoginPembaca />} />
         <Route path="/regisadmin" element={<RegisAdmin />} />
         <Route path="/regispembaca" element={<RegisPembaca />} />
+        <Route path="/profiladmin" element={<ProfilAdmin />} />
+        <Route path="/profilpembaca" element={<ProfilPembaca />} />
+        <Route path="/datapeminjambuku" element={<DataPeminjamBuku />} />
+        <Route path="/uploaddatabuku" element={<UploadDataBuku />} />
+        <Route path="/riwayatpeminjaman" element={<RiwayatPeminjaman />} />
+        <Route path="/aktivitassaya" element={<AktivitasSaya />} />
         <Route path="/LamanCatalog1" element={<LamanCatalog1 />} />
         <Route path="/LamanCatalog2" element={<LamanCatalog2 />} />
         <Route path="/FormPinjamBuku" element={<FormPinjamBuku />} />

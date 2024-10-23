@@ -152,6 +152,10 @@
   justify-content: center;
 }
 
+.scroll-service{
+  scroll-behavior: smooth;
+}
+
 
 /* Styling Sidebar */
 .sidebar-enter {

@@ -1,3 +1,5 @@
+import "/src/App.css";
+
 function Hero() {
   return (
     <>
@@ -22,9 +24,11 @@ function Hero() {
             Akses ribuan koleksi dengan cepat, periksa ketersediaan buku secara real-time, dan dapatkan rekomendasi bacaan yang sesuai dengan minatmu. 
             Nikmati pengalaman membaca yang lebih praktis, kapan pun kamu butuhkan.
           </div>
+          <a href="#service">
           <button className="mt-6 bg-[#27A37F] px-3 py-2 md:px-4 md:py-2 rounded-lg shadow-lg text-sm md:text-lg hover:bg-[#F9F9F9] hover:text-[#2A7C76] hover:font-bold">
             Jelajahi SiPerpus Sekarang!
           </button>
+          </a>
         </div>  
         {/* Image Hero */}
         <div className="flex flex-col justify-end h-full">

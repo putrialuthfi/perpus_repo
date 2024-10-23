@@ -1,6 +1,8 @@
+import "/src/App.css";
+
 function Service() {
     return (
-        <div className="w-full flex flex-wrap justify-center items-center gap-16 my-12">
+        <div id="service" className="scrool-service w-full flex flex-wrap justify-center items-center gap-16 my-12">
             <div className="w-60 h-auto relative flex flex-col items-center">
                 <div className="w-60 h-[362px] px-[30px] pt-[135.89px] pb-[136.11px] bg-[#bbcb8a] rounded-3xl shadow-lg backdrop-blur-md flex flex-col justify-center items-center">
                     <div className="text-[#121212] text-[34px] font-bold font-['Source Sans Pro']">2448+</div>

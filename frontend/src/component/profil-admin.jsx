@@ -1,9 +1,12 @@
 import "/src/App.css";
+import Navbar2 from "./navbar-2"
+import Footer from "./footer"
 
 function ProfilAdmin() {
   return (
     <>
-      <div className="my-10 mx-4 md:mx-20">
+    <Navbar2 />
+      <div className="mt-24 my-10 mx-4 md:mx-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="grid grid-rows-2 gap-6 mt-10">
             <div className="text-left border border-gray-100 shadow-md p-4 border-rounded">
@@ -29,11 +32,11 @@ function ProfilAdmin() {
                 </li>
                 <li className="flex items-center space-x-2">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#121212"><path d="M0 0h24v24H0z" fill="none"/><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-                  <a href="">Data Peminjam Buku</a>
+                  <a href="/DataPeminjamBuku">Data Peminjam Buku</a>
                 </li>
                 <li className="flex items-center space-x-2">
                     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#121212"><path d="M0 0h24v24H0z" fill="none"/><path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"/></svg>
-                  <a href="">Upload Data Buku</a>
+                  <a href="/UploadDataBuku">Upload Data Buku</a>
                 </li>
               </ul>
               </div>
@@ -124,6 +127,7 @@ function ProfilAdmin() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

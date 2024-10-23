@@ -15,9 +15,11 @@ function LoginAdmin() {
                             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Kata Sandi" />
                         </div>
                         <div className="">
-                            <button className="w-full bg-[#2A7C76] text-white font-bold py-2 px-3 mb-3 rounded" type="button">
-                                Masuk
-                            </button>
+                            <a href="/ProfilAdmin">
+                                <button className="w-full bg-[#2A7C76] text-white font-bold py-2 px-3 mb-3 rounded" type="button">
+                                    Masuk
+                                </button>
+                            </a>
                             <p className="text-sm">Belum punya akun? <a href="/RegisAdmin" className="underline">Klik disini untuk membuat akun</a></p>
                         </div>
                     </form>

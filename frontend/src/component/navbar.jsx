@@ -10,7 +10,7 @@ function Navbar() {
   const [isSidebarAccountDropdownOpen, setIsSidebarAccountDropdownOpen] = useState(false); // Untuk dropdown "Masuk ke Akun" di sidebar
   const dropdownRef = useRef(null); // Ref untuk dropdown kategori
   const accountDropdownRef = useRef(null); // Ref untuk dropdown "Masuk ke Akun"
-haghs
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
