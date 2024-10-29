@@ -1,5 +1,10 @@
 import express from 'express';
-import { getReaders, getReaderById, createReader, updateReader, deleteReader } from '../controllers/ReadersController.js';
+import { getReaders, 
+    getReaderById, 
+    createReader, 
+    updateReader, 
+    deleteReader, 
+} from '../controllers/ReadersController.js';
 
 const router = express.Router();
 

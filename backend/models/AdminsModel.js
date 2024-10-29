@@ -1,10 +1,12 @@
 import { Sequelize } from "sequelize";
-import db from "../config/database.js";
+// import koneksi from "../config/database.js";
+
+// import db from "../config/database.js";
 
 
 const {DataTypes} = Sequelize;
 
-const Admins = db.define('admins', {
+const Admins = koneksi.define('admins', {
     namalengkap:{
         type: DataTypes.VARCHAR,
         allowNull: false,
@@ -41,5 +43,5 @@ const Admins = db.define('admins', {
 export default Admins;
 
 (async()=>{
-  await db.sync();
+  await koneksi.sync();
 })();

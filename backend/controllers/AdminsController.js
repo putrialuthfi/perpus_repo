@@ -1,17 +1,17 @@
-import Readers from "../models/ReadersModel.js";
+import Admins from "../models/AdminsModel.js";
 
-export const getReaders = async(req, res)=>{
+export const getAdmins = async(req, res)=>{
     try {
-        const response = await Readers.findAll();
+        const response = await Admins.findAll();
         res.status(200).json(response);
     } catch (error){
         console.log(error.message);
     }
 }
 
-export const getReaderById = async(req, res)=>{
+export const getAdminById = async(req, res)=>{
     try {
-        const response = await Reader.findOne({
+        const response = await Admin.findOne({
             where:{
                 id: req.params.id
             }
@@ -22,36 +22,36 @@ export const getReaderById = async(req, res)=>{
     }
 }
 
-export const createReader = async(req, res)=>{
+export const createAdmin = async(req, res)=>{
     try {
-        await Reader.create(req.body);
-        res.status(201).json({msg: "Data Pembaca Telah Ditambahkan"});
+        await Admin.create(req.body);
+        res.status(201).json({msg: "Data Admin Telah Ditambahkan"});
     } catch (error){
         console.log(error.message);
     }
 }
 
-export const updateReader = async(req, res)=>{
+export const updateAdmin = async(req, res)=>{
     try {
-        await Reader.update(req.body, {
+        await Admin.update(req.body, {
             where:{
                 id: req.params.id
             }
         });
-        res.status(200).json({msg: "Data Pembaca Telah Diupdate"});
+        res.status(200).json({msg: "Data Admin Telah Diupdate"});
     } catch (error){
         console.log(error.message);
     }
 }
 
-export const deleteReader = async(req, res)=>{
+export const deleteAdmin = async(req, res)=>{
     try {
-        await Reader.destroy({
+        await Admin.destroy({
             where:{
                 id: req.params.id
             }
         });
-        res.status(200).json({msg: "Data Pembaca telah dihapus"});
+        res.status(200).json({msg: "Data Admin telah dihapus"});
     } catch (error){
         console.log(error.message);
     }

@@ -1,10 +1,10 @@
 import { Sequelize } from "sequelize";
-import db from "../config/database.js";
+import koneksi from "../config/db.js";
 
 
 const {DataTypes} = Sequelize;
 
-const Readers = db.define('readers', {
+const Readers = koneksi.define('readers', {
     namalengkap:{
         type: DataTypes.VARCHAR,
         allowNull: false,
@@ -41,5 +41,5 @@ const Readers = db.define('readers', {
 export default Readers;
 
 (async()=>{
-    await db.sync();
+    await koneksi.sync();
 })();
