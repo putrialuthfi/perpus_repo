@@ -4,14 +4,12 @@ import mysql from 'mysql';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 dotenv.config();
-import Readers from "./models/ReadersModel.js";
+import ProfileReaders from "./models/ProfileReadersModel.js";
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
-// app.use(Readers);
-// app.use(Admins);
 
 // CREATE CONNECTION DB
 const db = mysql.createConnection({
@@ -30,10 +28,10 @@ db.connect((err) => {
 });
 
 // Endpoint untuk post data pembaca/readers
-app.get('/readers', async (req, res) => {
+app.get('/profilereaders', async (req, res) => {
     try {
-      const readers = await Readers.findAll();
-      res.json(readers);
+      const profilereaders = await ProfileReaders.findAll();
+      res.json(profilereaders);
     } catch (error) {
       console.error('Error fetching readers:', error);
       res.status(500).json({ error: error.message });

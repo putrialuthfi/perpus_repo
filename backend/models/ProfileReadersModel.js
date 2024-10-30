@@ -4,7 +4,7 @@ import db from "../config/database.js";
 
 const {DataTypes} = Sequelize;
 
-const Readers = db.define('readers', {
+const ProfileReaders = db.define('readers', {
     namalengkap:{
         type: DataTypes.STRING,
         allowNull: false,
@@ -38,7 +38,7 @@ const Readers = db.define('readers', {
     timestamps: false
 });
 
-export default Readers;
+export default ProfileReaders;
 
 (async()=>{
     await db.sync();
