@@ -1,26 +1,19 @@
 import ProfileReaders from "../models/ProfileReadersModel.js";
 
-// app.get('/profilereaders', async (req, res) => {
-//     try {
-//       const profilereaders = await ProfileReaders.findAll();
-//       res.json(profilereaders);
-//     } catch (error) {
-//       console.error('Error fetching profilereaders:', error);
-//       res.status(500).json({ error: error.message });
-//     }
-//   });
-
-
 // Endpoint untuk GET data pembaca/readers
-export const getProfileReaders = async(req, res)=>{
+export const getProfileReaders = async (req, res) => {
     try {
+        console.log("Fetching profile readers..."); // Log sebelum query
         const profilereaders = await ProfileReaders.findAll();
+        console.log("Fetched profile readers:", profilereaders); // Log setelah query
         res.json(profilereaders);
-    } catch (error){
+    } catch (error) {
         console.error('Error fetching profilereaders:', error);
         res.status(500).json({ error: error.message });
     }
 }
+
+
 
 export const getProfileReadersById = async(req, res)=>{
     try {

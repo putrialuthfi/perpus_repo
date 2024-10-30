@@ -4,7 +4,7 @@ import mysql from 'mysql';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 dotenv.config();
-import ProfileReaders from "./models/ProfileReadersModel.js";
+// import ProfileReaders from "./models/ProfileReadersModel.js";
 import "./routes/ProfileReadersRoute.js";
 import ProfileReadersRoute from "./routes/ProfileReadersRoute.js";
 
@@ -12,6 +12,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
+app.use('/', ProfileReadersRoute);
 
 // CREATE CONNECTION DB
 const db = mysql.createConnection({
@@ -57,6 +58,8 @@ db.connect((err) => {
 //       return res.status(201).json({ message: "User added successfully", userId: result.insertId });
 //   });
 // });
+
+
 
 
 // Untuk menjalankan server
