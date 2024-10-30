@@ -1,14 +1,11 @@
 import { Sequelize } from "sequelize";
-// import koneksi from "../config/database.js";
-
-// import db from "../config/database.js";
-
+import db from "../config/database.js";
 
 const {DataTypes} = Sequelize;
 
-const Admins = koneksi.define('admins', {
+const ProfileAdmins = db.define('profile_admins', {
     namalengkap:{
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     ttl: {
@@ -16,23 +13,23 @@ const Admins = koneksi.define('admins', {
         allowNull: false,
     },
     jekel: {
-        type: DataTypes.ENUM,
+        type: DataTypes.ENUM('Laki-Laki', 'Perempuan'),
         allowNull: false,
     },
     nohp: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     domisili: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     email: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     password: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         allowNull: false,
     },
 }, {
@@ -40,8 +37,8 @@ const Admins = koneksi.define('admins', {
     timestamps: false
 });
 
-export default Admins;
+export default ProfileAdmins;
 
 (async()=>{
-  await koneksi.sync();
+    await db.sync();
 })();

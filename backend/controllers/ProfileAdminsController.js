@@ -1,17 +1,19 @@
-import Admins from "../models/AdminsModel.js";
+import ProfileAdmins from "../models/ProfileAdminsModel.js";
 
-export const getAdmins = async(req, res)=>{
+// Endpoint untuk GET data admin
+export const getProfileAdmins = async (req, res) => {
     try {
-        const response = await Admins.findAll();
-        res.status(200).json(response);
-    } catch (error){
-        console.log(error.message);
+        const profileadmins = await ProfileAdmins.findAll();
+        res.json(profileadmins);
+    } catch (error) {
+        console.error('Error fetching profileadmins:', error);
+        res.status(500).json({ error: error.message });
     }
 }
 
-export const getAdminById = async(req, res)=>{
+export const getProfileAdminsById = async(req, res)=>{
     try {
-        const response = await Admin.findOne({
+        const response = await ProfileAdmins.findOne({
             where:{
                 id: req.params.id
             }
@@ -22,18 +24,18 @@ export const getAdminById = async(req, res)=>{
     }
 }
 
-export const createAdmin = async(req, res)=>{
+export const createProfileAdmins = async(req, res)=>{
     try {
-        await Admin.create(req.body);
+        await ProfileAdmins.create(req.body);
         res.status(201).json({msg: "Data Admin Telah Ditambahkan"});
     } catch (error){
         console.log(error.message);
     }
 }
 
-export const updateAdmin = async(req, res)=>{
+export const updateProfileAdmins = async(req, res)=>{
     try {
-        await Admin.update(req.body, {
+        await ProfileAdmins.update(req.body, {
             where:{
                 id: req.params.id
             }
@@ -44,9 +46,9 @@ export const updateAdmin = async(req, res)=>{
     }
 }
 
-export const deleteAdmin = async(req, res)=>{
+export const deleteProfileAdmins = async(req, res)=>{
     try {
-        await Admin.destroy({
+        await ProfileAdmins.destroy({
             where:{
                 id: req.params.id
             }
