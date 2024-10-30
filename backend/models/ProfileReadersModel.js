@@ -4,7 +4,7 @@ import db from "../config/database.js";
 
 const {DataTypes} = Sequelize;
 
-const ProfileReaders = db.define('readers', {
+const ProfileReaders = db.define('profile_readers', {
     namalengkap:{
         type: DataTypes.STRING,
         allowNull: false,
