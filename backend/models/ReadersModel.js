@@ -1,12 +1,12 @@
 import { Sequelize } from "sequelize";
-import koneksi from "../config/db.js";
+import db from "../config/database.js";
 
 
 const {DataTypes} = Sequelize;
 
-const Readers = koneksi.define('readers', {
+const Readers = db.define('readers', {
     namalengkap:{
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     ttl: {
@@ -14,23 +14,23 @@ const Readers = koneksi.define('readers', {
         allowNull: false,
     },
     jekel: {
-        type: DataTypes.ENUM,
+        type: DataTypes.ENUM('Laki-Laki', 'Perempuan'),
         allowNull: false,
     },
     nohp: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     domisili: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     email: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     password: {
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         allowNull: false,
     },
 }, {
@@ -41,5 +41,5 @@ const Readers = koneksi.define('readers', {
 export default Readers;
 
 (async()=>{
-    await koneksi.sync();
+    await db.sync();
 })();
