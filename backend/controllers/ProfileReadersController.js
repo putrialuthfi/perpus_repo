@@ -1,5 +1,4 @@
 import ProfileReaders from "../models/ProfileReadersModel.js";
-import ProfileReadersRoute from "../routes/ProfileReadersRoute.js";
 
 // app.get('/profilereaders', async (req, res) => {
 //     try {
@@ -23,9 +22,9 @@ export const getProfileReaders = async(req, res)=>{
     }
 }
 
-export const getProfileReaderById = async(req, res)=>{
+export const getProfileReadersById = async(req, res)=>{
     try {
-        const response = await ProfileReader.findOne({
+        const response = await ProfileReaders.findOne({
             where:{
                 id: req.params.id
             }
@@ -36,18 +35,18 @@ export const getProfileReaderById = async(req, res)=>{
     }
 }
 
-export const createProfileReader = async(req, res)=>{
+export const createProfileReaders = async(req, res)=>{
     try {
-        await ProfileReader.create(req.body);
+        await ProfileReaders.create(req.body);
         res.status(201).json({msg: "Data Pembaca Telah Ditambahkan"});
     } catch (error){
         console.log(error.message);
     }
 }
 
-export const updateProfileReader = async(req, res)=>{
+export const updateProfileReaders = async(req, res)=>{
     try {
-        await ProfileReader.update(req.body, {
+        await ProfileReaders.update(req.body, {
             where:{
                 id: req.params.id
             }
@@ -58,9 +57,9 @@ export const updateProfileReader = async(req, res)=>{
     }
 }
 
-export const deleteProfileReader = async(req, res)=>{
+export const deleteProfileReaders = async(req, res)=>{
     try {
-        await ProfileReader.destroy({
+        await ProfileReaders.destroy({
             where:{
                 id: req.params.id
             }
