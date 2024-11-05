@@ -11,6 +11,7 @@ export const getPembaca = async (req, res) => {
     }
 }
 
+// Endpoint untuk GET data pembaca/readers by ID
 export const getPembacaById = async(req, res)=>{
     try {
         const response = await Pembaca.findOne({
@@ -24,6 +25,7 @@ export const getPembacaById = async(req, res)=>{
     }
 }
 
+// Endpoint untuk CREATE data pembaca/readers
 export const createPembaca = async(req, res)=>{
     try {
         await Pembaca.create(req.body);
@@ -33,6 +35,7 @@ export const createPembaca = async(req, res)=>{
     }
 }
 
+// Endpoint untuk UPDATE data pembaca/readers
 export const updatePembaca = async(req, res)=>{
     try {
         await Pembaca.update(req.body, {
@@ -46,6 +49,7 @@ export const updatePembaca = async(req, res)=>{
     }
 }
 
+// Endpoint untuk DELETE data pembaca/readers
 export const deletePembaca = async(req, res)=>{
     try {
         await Pembaca.destroy({
