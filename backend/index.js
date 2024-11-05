@@ -4,16 +4,24 @@ import mysql from 'mysql';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 dotenv.config();
-import "./routes/ProfileReadersRoute.js";
-import ProfileReadersRoute from "./routes/ProfileReadersRoute.js";
-import ProfileAdminsRoute from "./routes/ProfileAdminsRoute.js";
+// import PembacaRoute from "./routes/PembacaRoute.js";
+import AdminsRoute from "./routes/AdminsRoute.js";
+import PeminjamRoute from "./routes/PeminjamRoute.js"
+import UploadBukuRoute from "./routes/UploadBukuRoute.js"
+import RiwPeminjamanRoute from "./routes/RiwPeminjamanRoute.js";
+import AktivitasRoute from "./routes/AktivitasRoute.js"
 
-const app = express();
+
+// const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
-app.use('/', ProfileReadersRoute);
-app.use('/', ProfileAdminsRoute);
+// app.use('/', PembacaRoute);
+app.use('/', AdminsRoute);
+app.use('/', PeminjamRoute);
+app.use('/', UploadBukuRoute);
+app.use('/', RiwPeminjamanRoute);
+app.use('/', AktivitasRoute);
 
 // CREATE CONNECTION DB
 const db = mysql.createConnection({
