@@ -9,7 +9,7 @@ const Admins = db.define('profil_admins', {
         allowNull: false,
     },
     ttl: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false,
     },
     jenis_kelamin: {

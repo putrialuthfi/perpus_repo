@@ -17,7 +17,7 @@ const Peminjam = db.define('data_peminjam', {
         allowNull: false,
     },
     tgl_peminjaman: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false,
     },
 }, {

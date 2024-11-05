@@ -9,7 +9,7 @@ const Pembaca = db.define('profil_pembaca', {
         allowNull: false,
     },
     ttl: {
-        type: DataTypes.DATE,
+        type: DataTypes.DATEONLY,
         allowNull: false,
     },
     jenis_kelamin: {
