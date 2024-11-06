@@ -75,12 +75,12 @@ function Navbar() {
             <button onClick={toggleDropdown} className="text-white hover:text-teal-200">Kategori</button>
             {isDropdownOpen && (
               <div className="absolute bg-white text-black shadow-lg rounded mt-2 gap-2 text-left">
-                <a href="#action1" className="block px-4 py-2 hover:bg-teal-100">Agama</a>
-                <a href="#action2" className="block px-4 py-2 hover:bg-teal-100">Biografi</a>
-                <a href="#action3" className="block px-4 py-2 hover:bg-teal-100">Fiksi</a>
-                <a href="#action4" className="block px-4 py-2 hover:bg-teal-100">Filsafat</a>
-                <a href="#action5" className="block px-4 py-2 hover:bg-teal-100">Hukum</a>
-                <a href="#action6" className="block px-4 py-2 hover:bg-teal-100">NonFiksi</a>
+                <a href="#action1" className="block px-4 py-2 hover:bg-teal-100 rounded">Agama</a>
+                <a href="#action2" className="block px-4 py-2 hover:bg-teal-100 rounded">Biografi</a>
+                <a href="#action3" className="block px-4 py-2 hover:bg-teal-100 rounded">Fiksi</a>
+                <a href="#action4" className="block px-4 py-2 hover:bg-teal-100 rounded">Filsafat</a>
+                <a href="#action5" className="block px-4 py-2 hover:bg-teal-100 rounded">Hukum</a>
+                <a href="#action6" className="block px-4 py-2 hover:bg-teal-100 rounded">Nonfiksi</a>
               </div>
             )}
           </div>
@@ -91,8 +91,8 @@ function Navbar() {
             <button onClick={toggleAccountDropdown} className="text-white hover:text-teal-200">Masuk ke Akun</button>
             {isAccountDropdownOpen && (
               <div className="absolute bg-white text-black shadow-lg rounded mt-2 text-left">
-                <a href="/LoginAdmin" className="block px-4 py-2 hover:bg-teal-100">Admin</a>
-                <a href="/LoginPembaca" className="block px-4 py-2 hover:bg-teal-100">Pembaca</a>
+                <a href="/LoginAdmin" className="block px-4 py-2 hover:bg-teal-100 rounded">Admin</a>
+                <a href="/LoginPembaca" className="block px-4 py-2 hover:bg-teal-100 rounded">Pembaca</a>
               </div>
             )}
           </div>
