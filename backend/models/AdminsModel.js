@@ -42,3 +42,26 @@ export default Admins;
 (async()=>{
     await db.sync();
 })();
+
+
+
+
+
+// DISINI
+// import db from '../config/database.js'; // Menggunakan import untuk ES Module
+
+// // Fungsi untuk mengambil data admin dari database
+// const getAdmins = async () => {
+//   return new Promise((resolve, reject) => {
+//     const query = 'SELECT nama, deskripsi FROM admins'; // Sesuaikan query SQL dengan database-mu
+//     db.query(query, (err, results) => {
+//       if (err) {
+//         return reject(err);
+//       }
+//       resolve(results);
+//     });
+//   });
+// };
+
+// // Menggunakan export named export untuk ES Module
+// export { getAdmins };

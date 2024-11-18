@@ -62,3 +62,31 @@ export const deleteAdmins = async(req, res)=>{
         console.log(error.message);
     }
 }
+
+
+// DISINI
+
+// untuk mendapatkan data dari database
+// export const getDataFromDatabase = async (req, res) => {
+//     try {
+//         const data = await AdminsModel.find();
+//         res.status(200).json(data);
+//     } catch (error) {
+//         res.status(500).json({message:'Gagal mendapatkan data', error})
+//     }
+// }
+// const { getAdmins } = require('../models/AdminsModel.js');
+// import {getAdmins} from '../models/AdminsModel.js';
+
+// const fetchAdmins = async (req, res) => {
+//   try {
+//     const admins = await getAdmins();
+//     res.status(200).json(admins); // Mengirimkan data dalam format JSON
+//   } catch (error) {
+//     console.error("Error fetching admin data:", error);
+//     res.status(500).json({ message: "Gagal mendapatkan data admin" });
+//   }
+// };
+
+// export {fetchAdmins};
+// module.exports = { fetchAdmins };
