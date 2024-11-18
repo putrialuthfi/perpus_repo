@@ -8,16 +8,35 @@ function ProfilPembaca() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
+  // const handleSubmit = async (e) => {
+  //     e.preventDefault();
+  //     try {
+  //         const response = await axios.post('http://localhost:3000/pembaca', { name, email });
+  //         console.log(response.data);
+  //         alert('Data berhasil disimpan');
+  //     } catch (error) {
+  //         console.error('Error saving data:', error);
+  //         alert('Gagal menyimpan data');
+  //     }
+  // };
+
   const handleSubmit = async (e) => {
-      e.preventDefault();
-      try {
-          const response = await axios.post('http://localhost:3000/pembaca', { name, email });
-          console.log(response.data);
-          alert('Data berhasil disimpan');
-      } catch (error) {
-          console.error('Error saving data:', error);
-          alert('Gagal menyimpan data');
-      }
+    e.preventDefault();
+  
+    try {
+      const response = await axios.put('http://localhost:3000/pembaca', {
+        // Data yang akan diperbarui
+        nama: name,
+        email: email,
+        // ... data lainnya
+      });
+  
+      setUserData(response.data);
+      alert('Profil berhasil diperbarui');
+    } catch (error) {
+      console.error('Error updating profile:', error);
+      alert('Gagal memperbarui profil');
+    }
   };
 
   return (
@@ -156,209 +175,3 @@ function ProfilPembaca() {
 }
 
 export default ProfilPembaca;
-
-// import "/src/App.css";
-// import Navbar2 from "./navbar-2";
-// import Footer from "./footer";
-// import React, { useState } from "react";
-// import axios from "axios";
-
-// function ProfilPembaca() {
-//   // State untuk setiap input
-//   const [nama_lengkap, setNamaLengkap] = useState("");
-//   const [ttl, setTtl] = useState("");
-//   const [jenis_kelamin, setJenisKelamin] = useState("");
-//   const [no_hp, setNoHp] = useState("");
-//   const [domisili, setDomisili] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [password, setPassword] = useState("");
-
-//   const fetchPembaca = async () => {
-//     try {
-//       const response = await axios.get('http://localhost:3000/pembaca');
-//       setPembacaList(response.data);
-//     } catch (error) {
-//       console.error('Error fetching pembaca:', error);
-//     }
-//   };
-
-//   // Mengambil data pembaca saat komponen di-mount
-//   useEffect(() => {
-//     fetchPembaca();
-//   }, []);
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const response = await axios.post('http://localhost:3000/pembaca', { nama_lengkap, ttl, jenis_kelamin, no_hp, domisili, email, password });
-//       console.log(response.data);
-//       alert('Data berhasil disimpan');
-//       fetchPembaca(); // Ambil data pembaca setelah berhasil menyimpan
-//       // Reset form
-//       setNamaLengkap("");
-//       setTtl("");
-//       setJenisKelamin("");
-//       setNoHp("");
-//       setDomisili("");
-//       setEmail("");
-//       setPassword("");
-//     } catch (error) {
-//       console.error('Error saving data:', error);
-//       alert('Gagal menyimpan data');
-//     }
-//   };
-
-//   return (
-//     <>
-//       <Navbar2 />
-//       <div className="mt-24 mb-10 mx-4 md:mx-20">
-//         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-//           {/* Left sidebar */}
-//           <div className="grid grid-rows-2 gap-6 mt-10">
-//             <div className="text-left border border-gray-100 shadow-md p-4 border-rounded">
-//               <div className="font-bold">**Pro Tips Saat Melakukan Peminjaman Buku</div>
-//               <ul className="list-disc pl-5">
-//                 <li>Periksa kondisi buku</li>
-//                 <li>Membaca syarat & ketentuan</li>
-//                 <li>Jaga Kebersihan Buku</li>
-//                 <li>Pinjam buku sesuai kebutuhan</li>
-//                 <li>Hindari meminjam buku terlalu banyak sekaligus</li>
-//               </ul>
-//             </div>
-//             <div>
-//               <div className="text-left h-auto space-y-3 p-4 border-rounded border border-gray-100 shadow-md">
-//                 <div className="font-bold">Navigasi Profil</div>
-//                 <ul className="space-y-3">
-//                   <li className="flex items-center space-x-2">
-//                     <a href="/ProfilPembaca">Profil Saya</a>
-//                   </li>
-//                   <li className="flex items-center space-x-2">
-//                     <a href="/RiwayatPeminjaman">Riwayat Peminjaman Buku</a>
-//                   </li>
-//                   <li className="flex items-center space-x-2">
-//                     <a href="/AktivitasSaya">Aktivitas Saya</a>
-//                   </li>
-//                 </ul>
-//               </div>
-//             </div>
-//           </div>
-
-//           {/* Form data */}
-//           <div className="col-span-1 md:col-span-2">
-//             <div className="mb-4">
-//               <div className="font-bold text-2xl mb-2">Selamat Datang, Nara!</div>
-//               <div className="text-sm">Ini adalah halaman informasi mengenai profil dan fitur untukmu di website SiPerpus</div>
-//             </div>
-
-//             {/* Form */}
-//             <form onSubmit={handleSubmit} className="space-y-4 pl-0 md:pl-10 text-left">
-//               <div className="space-y-2">
-//                 <label htmlFor="nama" className="w-full md:w-2/4 text-sm font-medium">
-//                   Nama Lengkap
-//                 </label>
-//                 <input
-//                   type="text"
-//                   id="nama"
-//                   name="nama"
-//                   className="w-full border border-gray-300 rounded-md p-2 custom-input"
-//                   value={nama_lengkap}
-//                   onChange={(e) => setNamaLengkap(e.target.value)}
-//                 />
-//               </div>
-//               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//                 <div className="space-y-2">
-//                   <label htmlFor="ttl" className="w-full md:w-2/4 text-sm font-medium">
-//                     Tanggal Lahir
-//                   </label>
-//                   <input
-//                     type="date"
-//                     id="ttl"
-//                     name="ttl"
-//                     className="w-full border border-gray-300 rounded-md p-2 custom-input"
-//                     value={ttl}
-//                     onChange={(e) => setTtl(e.target.value)}
-//                   />
-//                 </div>
-//                 <div className="space-y-2">
-//                   <label htmlFor="jekel" className="w-full md:w-2/4 text-sm font-medium">
-//                     Jenis Kelamin
-//                   </label>
-//                   <select
-//                     id="gender"
-//                     name="gender"
-//                     className="w-full border border-gray-300 rounded-md p-2 custom-input"
-//                     value={jenis_kelamin}
-//                     onChange={(e) => setJenisKelamin(e.target.value)}
-//                   >
-//                     <option value="Laki-laki">Laki-laki</option>
-//                     <option value="Perempuan">Perempuan</option>
-//                   </select>
-//                 </div>
-//               </div>
-//               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//                 <div className="space-y-2">
-//                   <label htmlFor="no_hp" className="w-full md:w-2/4 text-sm font-medium">
-//                     Nomor HP
-//                   </label>
-//                   <input
-//                     type="text"
-//                     id="no_hp"
-//                     name="no_hp"
-//                     className="w-full border border-gray-300 rounded-md p-2 custom-input"
-//                     value={no_hp}
-//                     onChange={(e) => setNoHp(e.target.value)}
-//                   />
-//                 </div>
-//                 <div className="space-y-2">
-//                   <label htmlFor="domisili" className="w-full md:w-2/4 text-sm font-medium">
-//                     Domisili
-//                   </label>
-//                   <input
-//                     type="text"
-//                     id="domisili"
-//                     name="domisili"
-//                     className="w-full border border-gray-300 rounded-md p-2 custom-input"
-//                     value={domisili}
-//                     onChange={(e) => setDomisili(e.target.value)}
-//                   />
-//                 </div>
-//               </div>
-//               <div className="space-y-2">
-//                 <label htmlFor="email" className="w-full md:w-2/4 text-sm font-medium">
-//                   Email
-//                 </label>
-//                 <input
-//                   type="text"
-//                   id="email"
-//                   name="email"
-//                   className="w-full border border-gray-300 rounded-md p-2 custom-input"
-//                   value={email}
-//                   onChange={(e) => setEmail(e.target.value)}
-//                 />
-//               </div>
-//               <div className="space-y-2">
-//                 <label htmlFor="password" className="w-full md:w-2/4 text-sm font-medium">
-//                   Password
-//                 </label>
-//                 <input
-//                   type="text"
-//                   id="password"
-//                   name="password"
-//                   className="w-full border border-gray-300 rounded-md p-2 custom-input"
-//                   value={password}
-//                   onChange={(e) => setPassword(e.target.value)}
-//                 />
-//               </div>
-//               <div className="w-full text-right mt-6">
-//                 <button type="submit" className="button-primary">Update Profil</button>
-//               </div>
-//             </form>
-//           </div>
-//         </div>
-//       </div>
-//       <Footer />
-//     </>
-//   );
-// }
-
-// export default ProfilPembaca;
