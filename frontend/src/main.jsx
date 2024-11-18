@@ -11,6 +11,7 @@ import {
   Tooltip,
 } from "@material-tailwind/react"
 import App from './App.jsx'
+import { ThemeProvider } from "@material-tailwind/react";
 import './index.css'
 import Navbar from './component/Navbar.jsx'
 import Hero from './component/section-hero.jsx'
@@ -27,7 +28,6 @@ import RegisAdmin from './component/regis-admin.jsx';
 import RegisPembaca from './component/regis-pembaca.jsx';
 import ProfilAdmin from './component/profil-admin.jsx';
 import ProfilPembaca from './component/profil-pembaca.jsx';
-import { ThemeProvider } from "@material-tailwind/react";
 import DataPeminjamBuku from './component/data-peminjam-buku.jsx';
 import UploadDataBuku from './component/upload-data-buku.jsx';
 import RiwayatPeminjaman from './component/riwayat-peminjaman.jsx';
@@ -55,24 +55,10 @@ const Home = () => {
         <Route path="/FormPinjamBuku" element={<FormPinjamBuku />} />
         <Route path="/tentangkami" element={<TentangKami />} />
         <Route path="/Article" element={<Article />} />
+        {/* <Route path="/DataComponent" element={<DataComponent />} /> */}
       </Routes>
     </Router>
   )
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(<Home />);
-
-// ReactDOM.createRoot(document.getElementById('root')).render(
-//   <React.StrictMode>
-//     <Router>
-//       <Routes>
-        
-//       </Routes>
-//     </Router>
-//     <LamanCatalog1 />
-//     <Route path="/LamanCatalog2" element={<LamanCatalog2 />} />
-//     <Beranda />
-
-
-//   </React.StrictMode>,
-// )
