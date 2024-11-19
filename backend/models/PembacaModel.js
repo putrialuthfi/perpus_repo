@@ -28,10 +28,10 @@ const Pembaca = db.define('profil_pembaca', {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
+    // password: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    // },
 }, {
     freezeTableName:true,
     timestamps: false
