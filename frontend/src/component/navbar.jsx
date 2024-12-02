@@ -4,9 +4,11 @@ import "/src/App.css";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // Untuk dropdown di desktop (Kategori)
-  const [isSidebarDropdownOpen, setIsSidebarDropdownOpen] = useState(false); // Untuk dropdown di sidebar (Kategori)
+  const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false); 
+  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false); // Untuk dropdown di desktop (Kategori)
   const [isAccountDropdownOpen, setIsAccountDropdownOpen] = useState(false); // Untuk dropdown "Masuk ke Akun" di desktop
+  
+  const [isSidebarDropdownOpen, setIsSidebarDropdownOpen] = useState(false); // Untuk dropdown di sidebar (Kategori)
   const [isSidebarAccountDropdownOpen, setIsSidebarAccountDropdownOpen] = useState(false); // Untuk dropdown "Masuk ke Akun" di sidebar
   const dropdownRef = useRef(null); // Ref untuk dropdown kategori
   const accountDropdownRef = useRef(null); // Ref untuk dropdown "Masuk ke Akun"
@@ -15,8 +17,12 @@ function Navbar() {
     setIsOpen(!isOpen);
   };
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen); // Toggle dropdown di desktop (Kategori)
+  const toggleServiceDropdown = () => {
+    setIsServiceDropdownOpen(!isServiceDropdownOpen); // Toggle dropdown di desktop (Kategori)
+  };
+
+  const toggleCategoryDropdown = () => {
+    setIsCategoryDropdownOpen(!isCategoryDropdownOpen); // Toggle dropdown di desktop (Kategori)
   };
 
   const toggleSidebarDropdown = () => {
@@ -39,23 +45,57 @@ function Navbar() {
     }
   };
 
-  const closeDropdown = (event) => {
-    // Check if the click was outside the dropdown
+  const closeServiceDropdown = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      setIsDropdownOpen(false);
+      setIsServiceDropdownOpen(false);
     }
-    // Check if the click was outside the account dropdown
     if (accountDropdownRef.current && !accountDropdownRef.current.contains(event.target)) {
+      setIsAccountCategoryDropdownOpen(false);
+    }
+  };
+
+  const closeCategoryDropdown = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsCategoryDropdownOpen(false);
+    }
+    if (accountDropdownRef.current && !accountDropdownRef.current.contains(event.target)) {
+      setIsAccountCategoryDropdownOpen(false);
+    }
+  };
+
+  const closeAccountDropdown = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setIsAccountDropdownOpen(false);
+    }
+    if (accountDropdownRef.current && !accountDropdownRef.current.contains(event.target)) {
+      setIsAccountCategoryDropdownOpen(false);
     }
   };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-    document.addEventListener('mousedown', closeDropdown); // Add event listener for clicks
+    document.addEventListener('mousedown', closeServiceDropdown); // Add event listener for clicks
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      document.removeEventListener('mousedown', closeDropdown); // Cleanup event listener on unmount
+      document.removeEventListener('mousedown', closeServiceDropdown); // Cleanup event listener on unmount
+    };
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    document.addEventListener('mousedown', closeCategoryDropdown); // Add event listener for clicks
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', closeCategoryDropdown); // Cleanup event listener on unmount
+    };
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    document.addEventListener('mousedown', closeAccountDropdown); // Add event listener for clicks
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', closeAccountDropdown); // Cleanup event listener on unmount
     };
   }, []);
 
@@ -72,8 +112,20 @@ function Navbar() {
         <div className="hidden md:flex space-x-4">
           <a href="/Beranda" className="text-white hover:text-teal-200">Beranda</a>
           <div className="relative" ref={dropdownRef}> {/* Add ref to the dropdown */}
-            <button onClick={toggleDropdown} className="text-white hover:text-teal-200">Kategori</button>
-            {isDropdownOpen && (
+            <button onClick={toggleServiceDropdown} className="text-white hover:text-teal-200">Layanan</button>
+            {isServiceDropdownOpen && (
+              <div className="absolute bg-white text-black shadow-lg rounded mt-2 gap-2 text-left w-40">
+                <a href="#" className="block px-4 py-2 hover:bg-teal-100 rounded">Koleksi Digital</a>
+                <a href="#" className="block px-4 py-2 hover:bg-teal-100 rounded">OPEC</a>
+                <a href="#" className="block px-4 py-2 hover:bg-teal-100 rounded">Informasi Statistik</a>
+                <a href="#" className="block px-4 py-2 hover:bg-teal-100 rounded">Survey</a>
+                <a href="#" className="block px-4 py-2 hover:bg-teal-100 rounded">Buku Tamu</a>
+              </div>
+            )}
+          </div>
+          <div className="relative" ref={dropdownRef}> {/* Add ref to the dropdown */}
+            <button onClick={toggleCategoryDropdown} className="text-white hover:text-teal-200">Katalog Buku</button>
+            {isCategoryDropdownOpen && (
               <div className="absolute bg-white text-black shadow-lg rounded mt-2 gap-2 text-left">
                 <a href="#action1" className="block px-4 py-2 hover:bg-teal-100 rounded">Agama</a>
                 <a href="#action2" className="block px-4 py-2 hover:bg-teal-100 rounded">Biografi</a>
@@ -117,8 +169,25 @@ function Navbar() {
           <ul className='flex flex-col items-start text-white space-y-4'>
             <li><a href="/Beranda">Beranda</a></li>
             <li>
+              <button onClick={toggleSidebarAccountDropdown} className="flex items-center justify-between w-full">
+                Layanan
+                <svg className={`w-4 h-4 ml-2 transform ${isSidebarAccountDropdownOpen ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {isSidebarAccountDropdownOpen && (
+                <ul className="pl-4 mt-2 space-y-2 flex flex-col items-start">
+                  <li><a href="#" className="block hover:bg-teal-700 px-2 py-1">Koleksi Digital</a></li>
+                  <li><a href="#" className="block hover:bg-teal-700 px-2 py-1">OPEC</a></li>
+                  <li><a href="#" className="block hover:bg-teal-700 px-2 py-1">Informasi Statistik</a></li>
+                  <li><a href="#" className="block hover:bg-teal-700 px-2 py-1">Survey</a></li>
+                  <li><a href="#" className="block hover:bg-teal-700 px-2 py-1">Buku Tamu</a></li>
+                </ul>
+              )}
+            </li>
+            <li>
               <button onClick={toggleSidebarDropdown} className="flex items-center justify-between w-full">
-                Kategori
+                Katalog Buku
                 <svg className={`w-4 h-4 ml-2 transform ${isSidebarDropdownOpen ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
