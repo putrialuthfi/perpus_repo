@@ -1,40 +1,50 @@
+// import React, { useState, useEffect, useRef } from 'react';
+// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// import "/src/App.css";
 import React, { useState, useEffect, useRef } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import "/src/App.css";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
   const [isServiceDropdownOpen, setIsServiceDropdownOpen] = useState(false); 
-  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false); // Untuk dropdown di desktop (Kategori)
-  const [isAccountDropdownOpen, setIsAccountDropdownOpen] = useState(false); // Untuk dropdown "Masuk ke Akun" di desktop
+  const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false); 
+  const [isAccountDropdownOpen, setIsAccountDropdownOpen] = useState(false); 
   
-  const [isSidebarDropdownOpen, setIsSidebarDropdownOpen] = useState(false); // Untuk dropdown di sidebar (Kategori)
-  const [isSidebarAccountDropdownOpen, setIsSidebarAccountDropdownOpen] = useState(false); // Untuk dropdown "Masuk ke Akun" di sidebar
-  const dropdownRef = useRef(null); // Ref untuk dropdown kategori
-  const accountDropdownRef = useRef(null); // Ref untuk dropdown "Masuk ke Akun"
+
+  const [isSidebarServiceDropdownOpen, setIsSidebarServiceDropdownOpen] = useState(false); 
+  const serviceDropdownRef = useRef(null); 
+  const [isSidebarCategoryDropdownOpen, setIsSidebarCategoryDropdownOpen] = useState(false); 
+  const categoryDropdownRef = useRef(null); 
+  const [isSidebarAccountDropdownOpen, setIsSidebarAccountDropdownOpen] = useState(false); 
+  const accountDropdownRef = useRef(null); 
+
+  const dropdownRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const toggleServiceDropdown = () => {
-    setIsServiceDropdownOpen(!isServiceDropdownOpen); // Toggle dropdown di desktop (Kategori)
+    setIsServiceDropdownOpen(!isServiceDropdownOpen);
   };
 
   const toggleCategoryDropdown = () => {
-    setIsCategoryDropdownOpen(!isCategoryDropdownOpen); // Toggle dropdown di desktop (Kategori)
+    setIsCategoryDropdownOpen(!isCategoryDropdownOpen);
   };
-
-  const toggleSidebarDropdown = () => {
-    setIsSidebarDropdownOpen(!isSidebarDropdownOpen); // Toggle dropdown di sidebar (Kategori)
-  };
-
   const toggleAccountDropdown = () => {
-    setIsAccountDropdownOpen(!isAccountDropdownOpen); // Toggle dropdown di desktop (Masuk ke Akun)
+    setIsAccountDropdownOpen(!isAccountDropdownOpen);
   };
 
+  const toggleSidebarServiceDropdown = () => {
+    setIsSidebarServiceDropdownOpen(!isSidebarServiceDropdownOpen);
+  };
+  const toggleSidebarCategoryDropdown = () => {
+    setIsSidebarCategoryDropdownOpen(!isSidebarCategoryDropdownOpen);
+  };
   const toggleSidebarAccountDropdown = () => {
-    setIsSidebarAccountDropdownOpen(!isSidebarAccountDropdownOpen); // Toggle dropdown di sidebar (Masuk ke Akun)
+    setIsSidebarAccountDropdownOpen(!isSidebarAccountDropdownOpen);
   };
 
   const handleScroll = () => {
@@ -45,12 +55,20 @@ function Navbar() {
     }
   };
 
+  // const handleClickOutside = (event) => {
+  //   if (
+  //     accountDropdownRef.current &&
+  //     !accountDropdownRef.current.contains(event.target)
+  //   ) {
+  //     setIsAccountDropdownOpen(false);
+  //   }
+
   const closeServiceDropdown = (event) => {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setIsServiceDropdownOpen(false);
     }
-    if (accountDropdownRef.current && !accountDropdownRef.current.contains(event.target)) {
-      setIsAccountCategoryDropdownOpen(false);
+    if (serviceDropdownRef.current && !serviceDropdownRef.current.contains(event.target)) {
+      setIsServiceDropdownOpen(false);
     }
   };
 
@@ -58,8 +76,8 @@ function Navbar() {
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setIsCategoryDropdownOpen(false);
     }
-    if (accountDropdownRef.current && !accountDropdownRef.current.contains(event.target)) {
-      setIsAccountCategoryDropdownOpen(false);
+    if (categoryDropdownRef.current && !categoryDropdownRef.current.contains(event.target)) {
+      setIsCategoryDropdownOpen(false);
     }
   };
 
@@ -68,7 +86,7 @@ function Navbar() {
       setIsAccountDropdownOpen(false);
     }
     if (accountDropdownRef.current && !accountDropdownRef.current.contains(event.target)) {
-      setIsAccountCategoryDropdownOpen(false);
+      setIsAccountDropdownOpen(false);
     }
   };
 
@@ -80,6 +98,13 @@ function Navbar() {
       document.removeEventListener('mousedown', closeServiceDropdown); // Cleanup event listener on unmount
     };
   }, []);
+
+  // useEffect(() => {
+  //   document.addEventListener('mousedown', handleClickOutside);
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside);
+  //   };
+  // }, []);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -143,8 +168,8 @@ function Navbar() {
             <button onClick={toggleAccountDropdown} className="text-white hover:text-teal-200">Masuk ke Akun</button>
             {isAccountDropdownOpen && (
               <div className="absolute bg-white text-black shadow-lg rounded mt-2 text-left">
-                <a href="/LoginAdmin" className="block px-4 py-2 hover:bg-teal-100 rounded">Admin</a>
-                <a href="/LoginPembaca" className="block px-4 py-2 hover:bg-teal-100 rounded">Pembaca</a>
+                <Link to="/LoginAdmin" className="block px-4 py-2 hover:bg-teal-100 rounded">Admin</Link>
+                <Link to="/LoginPembaca" className="block px-4 py-2 hover:bg-teal-100 rounded">Pembaca</Link>
               </div>
             )}
           </div>
@@ -169,13 +194,13 @@ function Navbar() {
           <ul className='flex flex-col items-start text-white space-y-4'>
             <li><a href="/Beranda">Beranda</a></li>
             <li>
-              <button onClick={toggleSidebarAccountDropdown} className="flex items-center justify-between w-full">
+              <button onClick={toggleSidebarServiceDropdown} className="flex items-center justify-between w-full">
                 Layanan
-                <svg className={`w-4 h-4 ml-2 transform ${isSidebarAccountDropdownOpen ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className={`w-4 h-4 ml-2 transform ${isSidebarServiceDropdownOpen ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              {isSidebarAccountDropdownOpen && (
+              {isSidebarServiceDropdownOpen && (
                 <ul className="pl-4 mt-2 space-y-2 flex flex-col items-start">
                   <li><a href="#" className="block hover:bg-teal-700 px-2 py-1">Koleksi Digital</a></li>
                   <li><a href="#" className="block hover:bg-teal-700 px-2 py-1">OPEC</a></li>
@@ -186,13 +211,13 @@ function Navbar() {
               )}
             </li>
             <li>
-              <button onClick={toggleSidebarDropdown} className="flex items-center justify-between w-full">
+              <button onClick={toggleSidebarCategoryDropdown} className="flex items-center justify-between w-full">
                 Katalog Buku
-                <svg className={`w-4 h-4 ml-2 transform ${isSidebarDropdownOpen ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <svg className={`w-4 h-4 ml-2 transform ${isSidebarCategoryDropdownOpen ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              {isSidebarDropdownOpen && (
+              {isSidebarCategoryDropdownOpen && (
                 <ul className="pl-4 mt-2 space-y-2 flex flex-col items-start">
                   <li><a href="#action1" className="block hover:bg-teal-700 px-2 py-1">Agama</a></li>
                   <li><a href="#action2" className="block hover:bg-teal-700 px-2 py-1">Biografi</a></li>
@@ -214,16 +239,31 @@ function Navbar() {
               </button>
               {isSidebarAccountDropdownOpen && (
                 <ul className="pl-4 mt-2 space-y-2 flex flex-col items-start">
+                  <li><Link to="/LoginAdmin" className="block hover:bg-teal-700 px-2 py-1">Admin</Link></li>
+                  <li><Link to="/LoginPembaca" className="block hover:bg-teal-700 px-2 py-1">Pembaca</Link></li>
+                </ul>
+              )}
+            </li>
+            {/* <li>
+              <button onClick={toggleSidebarAccountDropdown} className="flex items-center justify-between w-full">
+                Masuk ke Akun
+                <svg className={`w-4 h-4 ml-2 transform ${isSidebarAccountDropdownOpen ? 'rotate-180' : 'rotate-0'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {isSidebarAccountDropdownOpen && (
+                <ul className="pl-4 mt-2 space-y-2 flex flex-col items-start">
                   <li><a href="/LoginAdmin" className="block hover:bg-teal-700 px-2 py-1">Admin</a></li>
                   <li><a href="/LoginPembaca" className="block hover:bg-teal-700 px-2 py-1">Pembaca</a></li>
                 </ul>
               )}
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
     </nav>
   );
 }
+
 
 export default Navbar;
