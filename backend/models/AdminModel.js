@@ -3,42 +3,21 @@ import db from "../config/database.js";
 
 const {DataTypes} = Sequelize;
 
-const Admin = db.define('profil_admin', {
-    nama_lengkap:{
-        type: DataTypes.STRING,
-        allowNull: false,
+const Admins = db.define('profile_admins', {
+    name:{
+        type: DataTypes.STRING
     },
-    ttl: {
-        type: DataTypes.DATEONLY,
-        allowNull: false,
+    email:{
+        type: DataTypes.STRING
     },
-    jenis_kelamin: {
-        type: DataTypes.STRING,
-        allowNull: false,
+    password:{
+        type: DataTypes.STRING
     },
-    no_hp: {
-        type: DataTypes.STRING,
-        allowNull: false,
+    refresh_token:{
+        type: DataTypes.TEXT
     },
-    domisili: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    email: {
-        type: DataTypes.STRING,
-        allowNull: false,
-    },
-    // password: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    // },
-}, {
-    freezeTableName:true,
-    timestamps: false
+},{
+    freezeTableName:true
 });
 
-export default Admin;
-
-(async()=>{
-    await db.sync();
-})();
+export default Admins;

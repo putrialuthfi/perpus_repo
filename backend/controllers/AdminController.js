@@ -1,92 +1,83 @@
-import Admin from "../models/AdminModel.js";
+import Admins from "../models/AdminModel.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
-// Endpoint untuk GET data admin
-export const getAdmin = async (req, res) => {
-    try {
-        const admin = await Admin.findAll();
-        res.json(admin);
-    } catch (error) {
-        console.error('Error fetching admin:', error);
-        res.status(500).json({ error: error.message });
+export const getAdmins = async (req, res) =>{
+    try{
+        const admins = await Admins.findAll({
+            attributes: ['id', 'name', 'email']
+        });
+        res.json(admins);
+    }catch (error){
+        console.log(error);
     }
 }
 
-// Endpoint untuk GET data admin by ID
-export const getAdminById = async(req, res)=>{
-    try {
-        const response = await Admin.findOne({
+export const RegisterAdmins = async(req, res) => {
+    const { name, email, password, confPassword } = req.body;
+    if(password !== confPassword) return res.status(400).json({msg: "Password dan Confirm Password Tidak Cocok"});
+    const salt = await bcrypt.genSalt();
+    const hashPassword = await bcrypt.hash(password, salt);
+    try{
+        await Admins.create({
+            name: name,
+            email: email,
+            password: hashPassword
+        });
+        res.json({msg: "Registrasi Akun Berhasil"});
+    } catch (error){
+        console.log(error);
+    }
+}
+
+export const LoginAdmins = async(req, res) => {
+    try{
+        const admin = await Admins.findAll({
             where:{
-                id: req.params.id
+                email: req.body.email
             }
         });
-        res.status(200).json(response);
-    } catch (error){
-        console.log(error.message);
-    }
-}
-
-// Endpoint untuk CREATE data admin
-export const createAdmin = async(req, res)=>{
-    try {
-        await Admin.create(req.body);
-        res.status(201).json({msg: "Data Admin Berhasil Ditambahkan"});
-    } catch (error){
-        console.log(error.message);
-    }
-}
-
-// Endpoint untuk UPDATE data admin
-export const updateAdmin = async(req, res)=>{
-    try {
-        await Admin.update(req.body, {
+        const match = await bcrypt.compare(req.body.password, admin[0].password);
+        if(!match) return res.status(400).json({msg: "Password yang Anda Masukan Salah"});
+        const adminId = admin[0].id;
+        const name = admin[0].name;
+        const email = admin[0].email;
+        const accessToken = jwt.sign({adminId, name, email}, process.env.ACCESS_TOKEN_SECRET,{
+            expiresIn: '20s'
+        });
+        const refreshToken = jwt.sign({adminId, name, email}, process.env.REFRESH_TOKEN_SECRET,{
+            expiresIn: '1d'
+        });
+        await Admins.update({refresh_token:refreshToken},{
             where:{
-                id: req.params.id
+                id: adminId
             }
         });
-        res.status(200).json({msg: "Data Admin Telah Diupdate"});
+        res.cookie('refreshToken', refreshToken,{
+            httpOnly: true,
+            maxAge: 24 * 60 * 60 * 1000,
+        });
+        res.json({ accessToken });
     } catch (error){
-        console.log(error.message);
+        res.status(404).json({msg: "Email Tidak Ditemukan"});
     }
 }
 
-// Endpoint untuk DELETE data admin
-export const deleteAdmin = async(req, res)=>{
-    try {
-        await Admin.destroy({
+export const LogoutAdmins = async(req, res) => {
+    const refreshToken = req.cookies.refreshToken;
+        if(!refreshToken) return res.sendStatus(204);
+        const admin = await Admins.findAll({
             where:{
-                id: req.params.id
+                refresh_token: refreshToken
             }
         });
-        res.status(200).json({msg: "Data Admin telah dihapus"});
-    } catch (error){
-        console.log(error.message);
-    }
+        if(!admin[0]) return res.sendStatus(204);
+        const adminId = admin[0].id;
+        await Admins.update({refresh_token: null},{
+            where:{
+                id: adminId
+            }
+        })
+        res.clearCookie('refreshToken');
+        return res.sendStatus(200);
 }
-
-
-// DISINI
-
-// untuk mendapatkan data dari database
-// export const getDataFromDatabase = async (req, res) => {
-//     try {
-//         const data = await AdminModel.find();
-//         res.status(200).json(data);
-//     } catch (error) {
-//         res.status(500).json({message:'Gagal mendapatkan data', error})
-//     }
-// }
-// const { getAdmin } = require('../models/AdminModel.js');
-// import {getAdmin} from '../models/AdminModel.js';
-
-// const fetchAdmin = async (req, res) => {
-//   try {
-//     const admin = await getAdmin();
-//     res.status(200).json(admin); // Mengirimkan data dalam format JSON
-//   } catch (error) {
-//     console.error("Error fetching admin data:", error);
-//     res.status(500).json({ message: "Gagal mendapatkan data admin" });
-//   }
-// };
-
-// export {fetchAdmin};
-// module.exports = { fetchAdmin };
