@@ -1,4 +1,4 @@
-import Navbar from "./Navbar"
+import Navbar from './navbar.jsx';
 import Hero from "./section-hero"
 import Service from "./section-service"
 import SectionCatalog from "./section-catalog"
@@ -18,5 +18,21 @@ function Beranda() {
             <Footer /> 
         </>
     )
+
+    // return (
+    //     <Router>
+    //         <Navbar />
+    //             <Routes>
+    //             <Route path="/LoginAdmin" element={<LoginAdmin />} />
+    //             <Route path="/LoginPembaca" element={<LoginPembaca />} />
+    //             <Hero />
+    //             <Service />  
+    //             <SectionCatalog />
+    //             <FAQ />
+    //             <CTA /> 
+    //             <Footer /> 
+    //             </Routes>
+    //     </Router>
+    // )
 };
 export default Beranda
