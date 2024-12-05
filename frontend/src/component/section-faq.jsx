@@ -45,7 +45,7 @@ const FAQ = () => {
                 Frequently Asked Question (FAQ) 😊
         </div>
         <div className="flex flex-row gap-3 w-full">
-            <div className="w-1/5 grid flex justify-end">
+            <div className="w-1/5 grid justify-end">
                 {/* <img 
                     src="../src/assets/img/illus-faq-1.png" 
                     alt="CTA Image" 

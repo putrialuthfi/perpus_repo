@@ -9,7 +9,7 @@ function Footer() {
           <img src="../src/assets/img/logo-2.png" alt="Logo-2" style={{width:'50px ',height:'50px'}} />
       </div>
         {/* Section: Informasi */}
-        <div className="w-full flex flex-col items-start mb-4 md:mb-0 text-[#F9F9F9] items-center justify-center text-center grid grid-rows-3 gap-1">
+        <div className="w-full flex-col mb-4 md:mb-0 text-[#F9F9F9] items-center justify-center text-center grid grid-rows-3 gap-1">
           <div className='text-xs md:text-base'>
             DINAS ARSIP DAN PERPUSTAKAAN DAERAH KABUPATEN BEKASI
           </div>

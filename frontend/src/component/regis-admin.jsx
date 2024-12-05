@@ -1,5 +1,6 @@
 import "/src/App.css";
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function RegisAdmin() {
@@ -35,12 +36,14 @@ function RegisAdmin() {
     fetchAdmin();
   }, []);
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:3000/admin', { nama_lengkap, ttl, jenis_kelamin, no_hp, domisili, email });
       console.log(response.data);
-      alert('Data berhasil disimpan');
+      alert('Akun Berhasil Dibuat');
       fetchAdmin(); // Ambil data admin setelah berhasil menyimpan
       // Reset form
       setNamaLengkap("");
@@ -49,9 +52,11 @@ function RegisAdmin() {
       setNoHp("");
       setDomisili("");
       setEmail("");
-    } catch (error) {
-      console.error('Error saving data:', error);
-      alert('Gagal menyimpan data');
+
+      navigate('/Beranda');
+        } catch (error) {
+          console.error('Error saving data:', error);
+          alert('Akun Gagal Dibuat');
     }
   };
 
