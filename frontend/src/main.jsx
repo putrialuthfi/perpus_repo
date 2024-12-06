@@ -17,6 +17,7 @@ import Hero from './component/section-hero.jsx';
 import Beranda from './component/homepage.jsx';
 import TentangKami from './component/tentang-kami.jsx';
 import Footer from './component/footer.jsx';
+import LamanCatalog0 from './component/laman-catalog-0.jsx';
 import LamanCatalog1 from './component/laman-catalog-1.jsx';
 import LamanCatalog2 from './component/laman-catalog-2.jsx';
 import FormPinjamBuku from './component/form-pinjambuku.jsx';
@@ -50,6 +51,7 @@ const Home = () => {
           <Route path="/uploaddatabuku" element={<UploadDataBuku />} />
           <Route path="/riwayatpeminjaman" element={<RiwayatPeminjaman />} />
           <Route path="/aktivitassaya" element={<AktivitasSaya />} />
+          <Route path="/LamanCatalog0" element={<LamanCatalog0 />} />
           <Route path="/LamanCatalog1" element={<LamanCatalog1 />} />
           <Route path="/LamanCatalog2" element={<LamanCatalog2 />} />
           <Route path="/FormPinjamBuku" element={<FormPinjamBuku />} />
