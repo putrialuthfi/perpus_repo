@@ -19,20 +19,6 @@ function Beranda() {
         </>
     )
 
-    // return (
-    //     <Router>
-    //         <Navbar />
-    //             <Routes>
-    //             <Route path="/LoginAdmin" element={<LoginAdmin />} />
-    //             <Route path="/LoginPembaca" element={<LoginPembaca />} />
-    //             <Hero />
-    //             <Service />  
-    //             <SectionCatalog />
-    //             <FAQ />
-    //             <CTA /> 
-    //             <Footer /> 
-    //             </Routes>
-    //     </Router>
-    // )
 };
+
 export default Beranda

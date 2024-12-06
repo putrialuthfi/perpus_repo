@@ -12,9 +12,7 @@ import {
 } from "@material-tailwind/react"
 import App from './App.jsx'
 import { ThemeProvider } from "@material-tailwind/react";
-// import { AuthProvider } from '../context/AuthContext.js';
 import './index.css';
-// import Navbar from './component/navbar.jsx';
 import Hero from './component/section-hero.jsx';
 import Beranda from './component/homepage.jsx';
 import TentangKami from './component/tentang-kami.jsx';
@@ -42,7 +40,6 @@ const Home = () => {
         <Routes>
           <Route path="/" element={<Beranda />} />
           <Route path="/beranda" element={<Beranda />} />
-          {/* <Route path="/navbar" element={<Navbar />} /> */}
           <Route path="/loginadmin" element={<LoginAdmin />} />
           <Route path="/loginpembaca" element={<LoginPembaca />} />
           <Route path="/regisadmin" element={<RegisAdmin />} />
@@ -58,7 +55,6 @@ const Home = () => {
           <Route path="/FormPinjamBuku" element={<FormPinjamBuku />} />
           <Route path="/tentangkami" element={<TentangKami />} />
           <Route path="/Article" element={<Article />} />
-          {/* <Route path="/DataComponent" element={<DataComponent />} /> */}
         </Routes>
       </BrowserRouter>
     

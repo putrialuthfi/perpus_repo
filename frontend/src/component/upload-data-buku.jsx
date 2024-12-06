@@ -138,7 +138,7 @@ function UploadDataBuku() {
               </form>
             </div>
             <div className="w-full text-right mt-6">
-              <button className="button-primary">Upload</button>
+              <button className="button-primary">Upload Data</button>
             </div>
           </div>
         </div>
